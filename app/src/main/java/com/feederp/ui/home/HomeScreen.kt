@@ -11,6 +11,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Logout
+import androidx.compose.material.icons.filled.Brightness6
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -40,6 +41,7 @@ class HomeViewModel @Inject constructor(
     private val sessionManager: SessionManager,
     private val auth: AuthRepository,
     private val backup: com.feederp.backup.BackupRepository,
+    val themeSettings: com.feederp.ui.theme.ThemeSettings,
 ) : ViewModel() {
     val session: StateFlow<UserSession?> = sessionManager.current
 
@@ -73,6 +75,9 @@ fun HomeScreen(onNavigate: (String) -> Unit, onLoggedOut: () -> Unit, vm: HomeVi
     ScreenScaffold(
         title = session?.let { "স্বাগতম, ${it.displayName}" } ?: "ফিড ERP",
         actions = {
+            IconButton(onClick = { vm.themeSettings.cycle() }) {
+                Icon(androidx.compose.material.icons.Icons.Filled.Brightness6, contentDescription = "থিম বদলান")
+            }
             IconButton(onClick = { vm.logout(onLoggedOut) }) {
                 Icon(Icons.AutoMirrored.Filled.Logout, contentDescription = "লগআউট")
             }
