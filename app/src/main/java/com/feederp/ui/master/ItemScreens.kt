@@ -161,14 +161,14 @@ fun ItemFormScreen(onBack: () -> Unit, vm: ItemFormViewModel = hiltViewModel()) 
                 onSelect = { u -> vm.update { it.copy(unitId = u.id) } },
             )
             LabeledField("মিনিমাম স্টক (কেজি)", form.minStockKg, { v -> vm.update { it.copy(minStockKg = v) } }, numeric = true)
-            SwitchRow("লট ট্র্যাক করুন", form.trackLot) { v ->
+            SwitchRow("লট ট্র্যাক করুন", form.trackLot, { v ->
                 vm.update { it.copy(trackLot = v, trackExpiry = if (v) it.trackExpiry else false) }
-            }
-            SwitchRow("মেয়াদ ট্র্যাক করুন", form.trackExpiry) { v ->
+            })
+            SwitchRow("মেয়াদ ট্র্যাক করুন", form.trackExpiry, { v ->
                 vm.update { it.copy(trackExpiry = v, trackLot = if (v) true else it.trackLot) }
-            }
-            SwitchRow("গুডস রিসিভে QC লাগবে", form.requiresQc) { v -> vm.update { it.copy(requiresQc = v) } }
-            SwitchRow("নিয়ন্ত্রিত আইটেম (ইস্যুতে ম্যানেজার অনুমতি)", form.isControlled) { v -> vm.update { it.copy(isControlled = v) } }
+            })
+            SwitchRow("গুডস রিসিভে QC লাগবে", form.requiresQc, { v -> vm.update { it.copy(requiresQc = v) } })
+            SwitchRow("নিয়ন্ত্রিত আইটেম (ইস্যুতে ম্যানেজার অনুমতি)", form.isControlled, { v -> vm.update { it.copy(isControlled = v) } })
             LabeledField("সংরক্ষণ নির্দেশনা", form.storageNote, { v -> vm.update { it.copy(storageNote = v) } }, singleLine = false)
 
             if (MasterLabels.showsMedicineFields(form.type)) {

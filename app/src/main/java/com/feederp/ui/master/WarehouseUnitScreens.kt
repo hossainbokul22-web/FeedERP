@@ -57,7 +57,7 @@ fun WarehouseListScreen(onBack: () -> Unit, vm: WarehouseViewModel = hiltViewMod
             text = {
                 Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
                     LabeledField("গুদামের নাম *", form.name, { v -> vm.update { it.copy(name = v) } })
-                    SwitchRow("ওষুধ গুদাম", form.isMedicineStore) { v -> vm.update { it.copy(isMedicineStore = v) } }
+                    SwitchRow("ওষুধ গুদাম", form.isMedicineStore, { v -> vm.update { it.copy(isMedicineStore = v) } })
                     ErrorText(message)
                 }
             },
