@@ -1,6 +1,8 @@
 package com.feederp.ui.home
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -33,6 +35,7 @@ import com.feederp.ui.auth.AuthRepository
 import com.feederp.ui.common.ScreenScaffold
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -42,7 +45,11 @@ class HomeViewModel @Inject constructor(
     private val auth: AuthRepository,
     private val backup: com.feederp.backup.BackupRepository,
     val themeSettings: com.feederp.ui.theme.ThemeSettings,
+    dashboardRepo: com.feederp.dashboard.DashboardRepository,
 ) : ViewModel() {
+    val dashboard: StateFlow<com.feederp.dashboard.DashboardData?> = dashboardRepo.observe()
+        .stateIn(viewModelScope, kotlinx.coroutines.flow.SharingStarted.WhileSubscribed(5000), null)
+
     val session: StateFlow<UserSession?> = sessionManager.current
 
     /** বর্তমান ইউজারের রোল অনুযায়ী দেখানোর মতো মেনু, গ্রুপ ধরে সাজানো। */
@@ -71,6 +78,7 @@ class HomeViewModel @Inject constructor(
 fun HomeScreen(onNavigate: (String) -> Unit, onLoggedOut: () -> Unit, vm: HomeViewModel = hiltViewModel()) {
     val session by vm.session.collectAsStateWithLifecycle()
     val groups = vm.visibleMenu()
+    val dash by vm.dashboard.collectAsStateWithLifecycle()
 
     ScreenScaffold(
         title = session?.let { "স্বাগতম, ${it.displayName}" } ?: "ফিড ERP",
@@ -94,6 +102,7 @@ fun HomeScreen(onNavigate: (String) -> Unit, onLoggedOut: () -> Unit, vm: HomeVi
             contentPadding = androidx.compose.foundation.layout.PaddingValues(16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
+            item(key = "dashboard") { DashboardHeader(dash) }
             vm.backupWarning()?.let { w ->
                 item(key = "backup-warning") {
                     Card(modifier = Modifier.fillMaxWidth()) {
@@ -105,12 +114,26 @@ fun HomeScreen(onNavigate: (String) -> Unit, onLoggedOut: () -> Unit, vm: HomeVi
                 item(key = "h-$group") {
                     Text(group, style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
                 }
-                items(entries, key = { it.route }) { menu ->
-                    Card(modifier = Modifier.fillMaxWidth().clickable { onNavigate(menu.route) }) {
-                        Row(Modifier.padding(16.dp), horizontalArrangement = Arrangement.SpaceBetween) {
-                            Text(menu.titleBn, style = MaterialTheme.typography.titleMedium)
-                            Text(menu.titleEn, style = MaterialTheme.typography.bodySmall)
+                items(entries.chunked(2), key = { row -> row.first().route }) { row ->
+                    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                        row.forEach { menu ->
+                            Card(Modifier.weight(1f).clickable { onNavigate(menu.route) }) {
+                                androidx.compose.foundation.layout.Column(Modifier.padding(14.dp)) {
+                                    Text(
+                                        menu.titleEn.take(1).uppercase(),
+                                        style = MaterialTheme.typography.titleMedium,
+                                        color = MaterialTheme.colorScheme.onPrimary,
+                                        modifier = Modifier
+                                            .background(MaterialTheme.colorScheme.primary, androidx.compose.foundation.shape.CircleShape)
+                                            .padding(horizontal = 12.dp, vertical = 6.dp),
+                                    )
+                                    androidx.compose.foundation.layout.Spacer(Modifier.height(8.dp))
+                                    Text(menu.titleBn, style = MaterialTheme.typography.titleMedium)
+                                    Text(menu.titleEn, style = MaterialTheme.typography.bodySmall)
+                                }
+                            }
                         }
+                        if (row.size == 1) androidx.compose.foundation.layout.Spacer(Modifier.weight(1f))
                     }
                 }
             }
