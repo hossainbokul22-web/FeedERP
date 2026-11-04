@@ -10,6 +10,8 @@ import com.feederp.data.Seeder
 import com.feederp.data.UserDao
 import com.feederp.data.UserEntity
 import com.feederp.inventory.AuditRepository
+import android.content.Context
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -24,6 +26,7 @@ sealed interface LoginResult {
 
 @Singleton
 class AuthRepository @Inject constructor(
+    @ApplicationContext context: Context,
     private val users: UserDao,
     private val stamper: Stamper,
     private val session: SessionManager,
@@ -31,6 +34,27 @@ class AuthRepository @Inject constructor(
     private val seeder: Seeder,
 ) {
     private val throttle = LoginThrottle()
+    private val prefs = context.getSharedPreferences("auth", Context.MODE_PRIVATE)
+
+    fun lastUsername(): String = prefs.getString("last_username", "") ?: ""
+
+    suspend fun tryRestore(): Boolean {
+        if (session.current.value != null) return true
+        val uid = prefs.getString("remember_uid", null) ?: return false
+        if (System.currentTimeMillis() > prefs.getLong("remember_until", 0L)) { forget(); return false }
+        val user = users.getById(uid)
+        if (user == null || !user.active || user.deletedAt != null) { forget(); return false }
+        session.login(UserSession(user.id, user.username, user.displayName, user.role))
+        audit.log("LOGIN_RESTORED", "user", user.id)
+        return true
+    }
+
+    private fun saveRemember(userId: String) {
+        prefs.edit().putString("remember_uid", userId)
+            .putLong("remember_until", System.currentTimeMillis() + REMEMBER_MILLIS).apply()
+    }
+
+    private fun forget() { prefs.edit().remove("remember_uid").remove("remember_until").apply() }
 
     /** ডাটাবেসে কোনো ইউজার না থাকলে প্রথম-চালুর সেটআপ (Owner তৈরি) দেখাতে হবে। */
     suspend fun needsSetup(): Boolean = users.count() == 0
@@ -60,7 +84,7 @@ class AuthRepository @Inject constructor(
         return Result.success(Unit)
     }
 
-    suspend fun login(username: String, pin: String): LoginResult {
+    suspend fun login(username: String, pin: String, remember: Boolean = false): LoginResult {
         val key = AuthRules.normalizeUsername(username)
         val now = System.currentTimeMillis()
         val remaining = throttle.remainingLockMillis(key, now)
@@ -84,16 +108,20 @@ class AuthRepository @Inject constructor(
         throttle.recordSuccess(key)
         seeder.seedDefaults() // idempotent; অন্য ফোন থেকে সিঙ্ক হয়ে আসা ইউজারের ফোনেও ডিফল্ট ডাটা নিশ্চিত করে
         session.login(UserSession(user.id, user.username, user.displayName, user.role))
+        prefs.edit().putString("last_username", user.username).apply()
+        if (remember) saveRemember(user.id) else forget()
         audit.log("LOGIN", "user", user.id)
         return LoginResult.Success
     }
 
     suspend fun logout() {
         if (session.current.value != null) audit.log("LOGOUT", "user", session.current.value?.userId)
+        forget()
         session.logout()
     }
 
     private companion object {
+        const val REMEMBER_MILLIS = 30L * 24 * 60 * 60 * 1000
         // শুধু সময় সমান রাখার জন্য; কোনো আসল PIN এর সাথে সম্পর্ক নেই।
         const val DUMMY_SALT = "AAAAAAAAAAAAAAAAAAAAAA=="
     }

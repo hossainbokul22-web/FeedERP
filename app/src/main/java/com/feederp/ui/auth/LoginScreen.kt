@@ -49,6 +49,7 @@ data class LoginUiState(
     val error: String? = null,
     val busy: Boolean = false,
     val loggedIn: Boolean = false,
+    val remember: Boolean = true,
 )
 
 @HiltViewModel
@@ -64,10 +65,15 @@ class LoginViewModel @Inject constructor(
     fun recheck() {
         viewModelScope.launch {
             val setup = auth.needsSetup()
-            _state.update { it.copy(loading = false, setupMode = setup) }
+            if (!setup && auth.tryRestore()) {
+                _state.update { it.copy(loading = false, setupMode = false, loggedIn = true) }
+                return@launch
+            }
+            _state.update { it.copy(loading = false, setupMode = setup, username = it.username.ifBlank { auth.lastUsername() }) }
         }
     }
 
+    fun onRemember(v: Boolean) = _state.update { it.copy(remember = v) }
     fun onUsername(v: String) = _state.update { it.copy(username = v, error = null) }
     fun onDisplayName(v: String) = _state.update { it.copy(displayName = v, error = null) }
     fun onPin(v: String) = _state.update { it.copy(pin = v.filter { c -> c.isDigit() }.take(AuthRules.MAX_PIN), error = null) }
@@ -90,7 +96,7 @@ class LoginViewModel @Inject constructor(
                     return@launch
                 }
             }
-            when (val r = auth.login(s.username, s.pin)) {
+            when (val r = auth.login(s.username, s.pin, s.remember)) {
                 LoginResult.Success -> _state.update { it.copy(busy = false, loggedIn = true, pin = "", confirmPin = "") }
                 LoginResult.InvalidCredentials -> _state.update { it.copy(busy = false, pin = "", error = "ইউজারনেম বা PIN ভুল") }
                 LoginResult.Inactive -> _state.update { it.copy(busy = false, pin = "", error = "এই ইউজার নিষ্ক্রিয়। মালিকের সাথে যোগাযোগ করুন") }
@@ -159,6 +165,11 @@ fun LoginScreen(onLoggedIn: () -> Unit, onOpenSync: () -> Unit = {}, vm: LoginVi
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword),
                     modifier = Modifier.fillMaxWidth(),
                 )
+            }
+            Spacer(Modifier.height(8.dp))
+            androidx.compose.foundation.layout.Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
+                androidx.compose.material3.Checkbox(checked = state.remember, onCheckedChange = vm::onRemember)
+                Text("এই ফোনে লগইন মনে রাখুন (৩০ দিন)", style = MaterialTheme.typography.bodyMedium)
             }
             state.error?.let {
                 Spacer(Modifier.height(12.dp))
