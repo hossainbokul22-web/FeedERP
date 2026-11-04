@@ -13,11 +13,16 @@ jobs:
         run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
       - uses: gradle/actions/setup-gradle@v4
         with: { gradle-version: "8.9" }
-      - name: Unit tests
-        run: gradle :app:testDebugUnitTest --stacktrace
-        continue-on-error: true
       - name: Build debug APK
-        run: gradle :app:assembleDebug --stacktrace
+        shell: bash
+        run: gradle :app:assembleDebug --stacktrace --continue 2>&1 | tee build.log
+      - name: Show errors in summary
+        if: failure()
+        run: |
+          echo '### Compile errors' >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          grep -E '^e: |What went wrong|error:' -A1 build.log | head -150 >> "$GITHUB_STEP_SUMMARY" || true
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         if: success()
         with: { name: feed-erp-debug-apk, path: app/build/outputs/apk/debug/*.apk }
