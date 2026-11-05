@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import com.feederp.ui.common.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.CornerRadius
@@ -22,6 +22,7 @@ import com.feederp.core.Money
 import com.feederp.dashboard.DashboardData
 import com.feederp.ui.theme.tr
 
+/** হোমের ওপরের ড্যাশবোর্ড: আজকের বিক্রি + ৭ দিনের বার-চার্ট + সংক্ষিপ্ত KPI কার্ড। */
 @Composable
 fun DashboardHeader(data: DashboardData?, modifier: Modifier = Modifier) {
     if (data == null) return

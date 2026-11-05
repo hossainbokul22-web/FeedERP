@@ -36,8 +36,10 @@ class AuthRepository @Inject constructor(
     private val throttle = LoginThrottle()
     private val prefs = context.getSharedPreferences("auth", Context.MODE_PRIVATE)
 
+    /** শেষ লগইন করা ইউজারনেম (লগইন স্ক্রিনে আগে থেকে বসানোর জন্য)। */
     fun lastUsername(): String = prefs.getString("last_username", "") ?: ""
 
+    /** "এই ফোনে মনে রাখুন" চালু থাকলে ৩০ দিনের মধ্যে PIN ছাড়াই সেশন ফিরিয়ে আনে। PIN কখনো সংরক্ষণ হয় না, শুধু ইউজার আইডি + মেয়াদ। */
     suspend fun tryRestore(): Boolean {
         if (session.current.value != null) return true
         val uid = prefs.getString("remember_uid", null) ?: return false

@@ -9,10 +9,12 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+/** গাঢ় সবুজ-টিল + উষ্ণ অ্যাম্বার অ্যাকসেন্ট। সম্পূর্ণ লাইট ও ডার্ক স্কিম। */
 private val LightScheme = lightColorScheme(
     primary = Color(0xFF0B6B57), onPrimary = Color.White,
     primaryContainer = Color(0xFFBFEFE2), onPrimaryContainer = Color(0xFF00201A),

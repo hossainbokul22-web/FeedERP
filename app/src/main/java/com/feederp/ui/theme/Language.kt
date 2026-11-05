@@ -14,6 +14,7 @@ enum class AppLang { BN, EN }
 
 val LocalLang = compositionLocalOf { AppLang.BN }
 
+/** বাংলা/ইংরেজি বেছে নিন: tr("বাংলা", "English")। */
 @Composable
 fun tr(bn: String, en: String): String = if (LocalLang.current == AppLang.EN) en else bn
 

@@ -15,6 +15,7 @@ import java.util.Calendar
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/** null = এই ইউজারের এই তথ্য দেখার অনুমতি নেই (কার্ড লুকানো হবে)। */
 data class DashboardData(
     val todaySalesPaisa: Long?,
     val last7DaysSalesPaisa: List<Long>?,
@@ -25,6 +26,7 @@ data class DashboardData(
 )
 
 object DashboardCalc {
+    /** আজ সহ শেষ [days] দিনের বিক্রি (পুরনো → আজ)। invoices = (তারিখ millis, মোট পয়সা)। */
     fun salesByDay(invoices: List<Pair<Long, Long>>, nowMillis: Long, days: Int = 7): List<Long> {
         val starts = dayStarts(nowMillis, days)
         val out = LongArray(days)

@@ -8,6 +8,7 @@ class FeedErpApp : Application() {
     override fun onCreate() {
         super.onCreate()
         System.loadLibrary("sqlcipher")
+        com.feederp.ui.theme.Translator.init(this)
         // স্পোকে স্বয়ংক্রিয় সিঙ্ক চালু থাকলে নির্ধারণ বজায় রাখা (UPDATE নীতি, তাই বারবার ডাকা নিরাপদ)
         try { com.feederp.sync.SyncScheduler.apply(this, com.feederp.sync.SyncSettings(this).autoSync) } catch (_: Exception) {}
     }

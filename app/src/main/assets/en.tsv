@@ -1,0 +1,1650 @@
+" শিথিল করলে সমাধান পাওয়া যায়	" relaxing it makes a solution possible
+% (সর্বনিম্ন	% (minimum
+% (সর্বোচ্চ	% (maximum
+% — ১০০% এর বেশি	% — more than 100%
+% — ১০০% পূরণ হয় না; আরও উপাদান যোগ করুন বা সীমা বাড়ান	% — does not reach 100%; add more ingredients or raise the limits
+%,.2f কেজি	%,.2f kg
+' কোডের কোনো আইটেম নেই	' there is no item with this code
+(অনুপস্থিত	(absent
+(আর	(and
+(একাধিক সীমা মিলিয়ে বিরোধ; উপাদানের সীমা বা তালিকা বদলান)	(conflict among multiple limits; change ingredient limits or the list)
+(ওটি	(OT
+(ওষুধ)	(medicine)
+(ওষুধযুক্ত)	(medicated)
+(গ্রাম)	(gram)
+(ঘাটতি	(shortfall
+(ডাউনটাইম	(downtime
+(নিষিদ্ধ)	(prohibited)
+(বর্তমান)	(current)
+(বাকি	(due
+(ব্যাচ	(batch
+(মেয়াদ	(expiry
+(লোড	(load
+(স্টকে দাম নেই)	(no price in stock)
+) আগেই ব্যবহার করা হয়েছে	) is already in use
+) এর কম হতে পারে না	) cannot be less than
+) ও ক্রেডিট (	) and credit (
+) মোছা হবে।	) will be deleted.
+) সমান নয়	) is not equal
+) — দুই ফোন একই Wi-Fi এ আছে কিনা এবং হাবে সার্ভার চালু আছে কিনা দেখুন	) — check that both phones are on the same Wi-Fi and the hub server is running
+); অ্যাপ বন্ধ করে আবার খুলুন — আগের ডাটা অক্ষত থাকার কথা	); close the app and reopen — earlier data should be intact
+); একই ভার্সনের অ্যাপে রিস্টোর করুন	); restore into the same app version
+); ট্রায়াল অনুমোদনের মাধ্যমেই এটি অনুমোদিত হবে	); it will be approved through trial approval
+); দুই ফোনেই একই সংস্করণ ইনস্টল করুন	); install the same version on both phones
+); বেতন রান আবার হিসাব করুন	); recalculate the payroll run
++ অংশগ্রহণকারী	+ Attendee
++ আইটেম যোগ করুন	+ Add item
++ আবেদন	+ Request
++ আরেকটি আইটেম	+ Another item
++ উপাদান যোগ করুন	+ Add ingredient
++ কাগজ	+ Document
++ খরচ যোগ	+ Add expense
++ গাড়ি	+ Vehicle
++ গ্রুপের ফল যোগ	+ Add group result
++ ছুটির দিন	+ Holiday
++ জরিমানা	+ Fine
++ ড্রাইভার	+ Driver
++ পিস-কাজ	+ Piece-work
++ প্রশিক্ষণ/সেফটি	+ Training/Safety
++ বোনাস	+ Bonus
++ মেশিন রান যোগ	+ Add machine run
++ রক্ষণাবেক্ষণ শিডিউল যোগ করুন	+ Add maintenance schedule
+, অগ্রিম	, advance
+, অ্যাপ	, app
+, আপনার: v	, yours: v
+, ঋণ	, loan
+, এই ফোন: v	, this phone: v
+, জরিমানা	, fine
+, ট্রিপ	, trip
+, তাই শুধু দেখা যাবে। বদলাতে "নতুন ভার্সন" বানান।	, so it is view-only. Create a "new version" to change it.
+, নেওয়া/অপেক্ষমান	, taken/pending
+, পিস	, pcs
+, ফেরতযোগ্য	, returnable
+, বাকি	, due
+, বোনাস	, bonus
+, লট ব্যালেন্স=	, lot balance=
+/ টন	/ ton
+/কেজি =	/kg =
+/৩ ·	/3 ·
+: অসমর্থিত ধরন	: unsupported type
+: অসীম/NaN সিঙ্ক করা যায় না	: infinite/NaN cannot be synced
+: আইটেম পাওয়া যায়নি	: item not found
+: আইটেম বাছাই করুন	: select an item
+: আর্দ্রতা ০-১০০% হতে হবে	: moisture must be 0-100%
+: উইথড্রয়াল পিরিয়ড	: withdrawal period
+: এই নোট আগেই ট্রিপে/লোডে আছে	: this note is already on a trip/load
+: এই বছরের প্রাপ্য ঠিক করা নেই	: this year's entitlement is not set
+: ওষুধ আছে, অথচ ফর্মুলা "ওষুধযুক্ত" চিহ্নিত নয়	: contains medicine, but the formula is not marked "medicated"
+: ওষুধ/নিয়ন্ত্রিত আইটেম ওষুধ গুদামে রিসিভ করুন	: receive medicine/controlled items into the medicine warehouse
+: ওষুধের সর্বোচ্চ ডোজ সীমা সেট করা নেই	: maximum dose limit for the medicine is not set
+: গুদাম ব্যালেন্স=	: warehouse balance=
+: ডোজ	: dose
+: তালিকার দামের বাইরে বিক্রির অনুমতি নেই	: selling outside the price list is not allowed
+: দাম (টাকা/কেজি) দিন	: enter the price (taka/kg)
+: দাম ঋণাত্মক হতে পারে না	: price cannot be negative
+: দাম ০ এর বেশি হতে হবে	: price must be greater than 0
+: দামের তালিকায় দাম নেই; ম্যানেজার দাম নির্ধারণ করুন	: no price in the price list; the manager must set the price
+: নিউট্রিয়েন্ট ডাটা নেই (হিসাবে ০ ধরা হয়েছে)	: no nutrient data (counted as 0 in the calculation)
+: নিউট্রিয়েন্ট মান সঠিক নয়	: nutrient value is not valid
+: নিয়ন্ত্রিত আইটেম (ইস্যুতে Manager অনুমোদন লাগবে)	: controlled item (Manager approval needed to issue)
+: নিয়ন্ত্রিত/সীমিত উপাদানের তালিকায় আছে	: is in the controlled/restricted ingredient list
+: নিষিদ্ধ উপাদানের তালিকায় আছে	: is in the prohibited ingredient list
+: পরিমাণ (কেজি) সংখ্যায় দিন	: enter quantity (kg) as a number
+: পরিমাণ সংখ্যায় দিন	: enter quantity as a number
+: পরিমাণ ০ এর বেশি হতে হবে	: quantity must be greater than 0
+: প্রয়োজন	required
+: প্রাপ্য	receivable
+: প্ল্যান	plan
+: বাকি	due
+: বাকি আছে	remaining
+: ব্লব সিঙ্ক করা যায় না	: blob cannot be synced
+: মেয়াদ উৎপাদনের আগে হতে পারে না	: expiry cannot be before production
+: মেয়াদ দিন	: enter expiry
+: মেয়াদোত্তীর্ণ পণ্য রিসিভ করা যাবে না	: expired goods cannot be received
+: সংখ্যা ঠিক নয়	: number is not valid
+: সর্বনিম্ন % সর্বোচ্চ % এর বেশি	: minimum % is greater than maximum %
+: সীমা ০ থেকে ১০০% এর মধ্যে হতে হবে	: limit must be between 0 and 100%
+= ৳	= ৳
+Android দেরি করতে পারে; ব্যাটারি-সেভারে বন্ধ থাকতে পারে। জরুরি হলে 'এখনই সিঙ্ক' চাপুন।	Android may delay it; it may be stopped by battery saver. If urgent, press 'Sync now'.
+COGS ডেলিভারি নিশ্চিত হলে এবং উৎপাদন খরচ ব্যাচ সম্পূর্ণ হলে লেজারে আসে; তার আগের মাল এখানে ধরা নেই।	COGS enters the ledger when delivery is confirmed and the production cost when the batch is completed; goods before that are not counted here.
+Feed ERP হাব	Feed ERP Hub
+Feed ERP হাব চালু	Feed ERP Hub running
+KB)। ফাইল ও পাসফ্রেজ আলাদা নিরাপদ জায়গায় রাখুন।	KB). Keep the file and passphrase in separate safe places.
+MB-এর বেশি; এই পদ্ধতিতে ব্যাকআপ সম্ভব নয়	MB; backup is not possible with this method
+PDF সংরক্ষণ / শেয়ার ফাইল	Save PDF / share file
+PIN আবার লিখুন	Confirm PIN
+PIN শুধু সংখ্যা হতে হবে	PIN must be digits only
+PM তৈরি	PM created
+PO অনুযায়ী প্রত্যাশিত:	Expected per PO:
+PO এর সাপ্লায়ার আলাদা	PO supplier differs
+PO তে বাকি:	Remaining on PO:
+PO পাওয়া যায়নি	PO not found
+PO বাতিল	PO cancelled
+PO বাতিল করুন	Cancel PO
+PO সম্পাদনা	Edit PO
+QC (মান নিয়ন্ত্রণ)	QC (Quality Control)
+QC অপেক্ষমাণ লট	QC pending lots
+QC নোট	QC note
+QC পাস না হওয়া পর্যন্ত এই ব্যাচের ফিড বিক্রি করা যাবে না।	Feed of this batch cannot be sold until QC passes.
+QC যাচাই	QC verify
+QC যাচাই সম্পন্ন	QC verification done
+QC যাচাইকৃত (অনুমোদন অপেক্ষমান)	QC verified (awaiting approval)
+QC লট	QC lots
+QC লাগবে: লট প্রথমে অপেক্ষমাণ থাকবে	QC required: lot stays pending first
+QC লাগে	QC required
+QC স্ট্যাটাস বদলান	Change QC status
+QC স্ট্যাটাস সঠিক নয়:	QC status is not valid:
+QC-তে জমা দিন	Submit to QC
+QC-র অপেক্ষায় কোনো লট নেই ✔	No lots waiting for QC ✔
+R&D ট্রায়াল	R&D trial
+R&D ট্রায়াল:	R&D trial:
+Wi-Fi এ যুক্ত নন	Not connected to Wi-Fi
+[অনুমোদিত:	[approved:
+[আদায়ের বেশি: ক্রেডিট	[more than collected: credit
+kcal/kg (সর্বনিম্ন	kcal/kg (minimum
+· অনুপস্থিত	· absent
+· আর্দ্রতা	· moisture
+· ইউনিট:	· unit:
+· উপস্থিত	· present
+· ওটি	· OT
+· ওষুধ/প্রিমিক্স	· medicine/premix
+· ওষুধযুক্ত	· medicated
+· কাস্টমার:	· customer:
+· কিস্তি ৳	· installment ৳
+· গুরুত্ব	· severity
+· ছুটি	· leave
+· ডিলার:	· dealer:
+· দেরি	· late
+· দৈনিক বৃদ্ধি	· daily gain
+· নেওয়া	· taken
+· পৌঁছেছে	· arrived
+· ফেরত	· returned
+· বন্ধ	· closed
+· বাকি ৳	· due ৳
+· বাদ/অপরিবর্তিত	· excluded/unchanged
+· ব্যাচ	· batch
+· ব্যাচ:	· batch:
+· ভাড়া	· hired
+· মৃত্যু	· mortality
+· মেয়াদ	· expiry
+· লট	· lot
+· লোড	· load
+· ৩১–৬০	· 31–60
+· ৬১–৯০	· 61–90
+· ৯০+	· 90+
+· ৳	· ৳
+। এখন থেকে নতুন ইনভয়েস নম্বর এই কোড দিয়ে শুরু হবে।	. From now on new invoice numbers will start with this code.
+। খরচ কম দেখাতে পারে।	. It may show the cost lower.
+অক্ষরের হতে হবে	characters long
+অগ্রিম	Advance
+অগ্রিম (সাপ্লায়ার থেকে পাব):	Advance (to receive from supplier):
+অগ্রিম / ঋণ	Advance / Loan
+অগ্রিম কর্তন মোট বেতনের বেশি হতে পারে না	Advance deduction cannot exceed gross salary
+অগ্রিম/ঋণ	Advance/Loan
+অগ্রিম/ঋণ প্রদান	Advance/Loan disbursement
+অগ্রিম/ক্রেডিট	Advance/Credit
+অগ্রিমের অঙ্ক ০ এর বেশি হতে হবে	Advance amount must be greater than 0
+অঙ্ক (টাকা)	Amount (taka)
+অঙ্ক (টাকা) *	Amount (taka) *
+অঙ্ক (৳)	Amount (৳)
+অঙ্ক ঠিক নয়	Amount is not valid
+অঙ্ক সংখ্যায় দিন	Enter the amount as a number
+অঙ্ক সঠিক সংখ্যা নয়	Amount is not a valid number
+অঙ্ক ০ এর বেশি হতে হবে	Amount must be greater than 0
+অঙ্ক)	digits)
+অঙ্কের হতে হবে	digits long
+অজানা আইটেম	Unknown item
+অজানা ক্রেতা	Unknown customer
+অজানা ত্রুটি	Unknown error
+অজানা মেশিন	Unknown machine
+অজানা হিসাব কোড:	Unknown account code:
+অতি জরুরি	Very urgent
+অনুপস্থিত	Absent
+অনুমোদন	Approve
+অনুমোদন (ফর্মুলাও অনুমোদিত হবে)	Approve (formula will also be approved)
+অনুমোদন (লেজারে পোস্ট হবে)	Approve (will post to ledger)
+অনুমোদন করা যায়নি:	Could not approve:
+অনুমোদন শুধু অনুমোদনের অনুমতিসহ ব্যবহারকারী (যেমন মালিক) দিতে পারেন।	Only users with approval permission (e.g. Owner) can approve.
+অনুমোদনে কোনো বাধা নেই।	Nothing blocks approval.
+অনুমোদনের অপেক্ষায়	Awaiting approval
+অনুমোদনের অপেক্ষায় নেই	Not awaiting approval
+অনুমোদনের কারণ (ক্রেডিট লিমিট/ডিসকাউন্ট ছাড়ালে, শুধু ম্যানেজার)	Approval reason (only Manager, when exceeding credit limit/discount)
+অনুমোদনের কারণ লিখুন (	Enter approval reason (
+অনুমোদনের পর এই ভার্সন আর বদলানো যাবে না। চালিয়ে যাবেন?	After approval this version can no longer be changed. Continue?
+অনুমোদনের পর এই মাসের বেতন আর বদলানো যাবে না এবং লেজারে খরচ পোস্ট হবে। নিশ্চিত?	After approval this month's payroll cannot be changed and the expense will be posted to the ledger. Sure?
+অনুমোদিত	Approved
+অনুমোদিত ফর্মুলা	Approved formula
+অনুমোদিত ফর্মুলা বদলানো যায় না; নতুন ভার্সন বানান	An approved formula cannot be changed; create a new version
+অনুমোদিত ফর্মুলা বাছাই করুন	Select an approved formula
+অনুমোদিত/আর্কাইভ ফর্মুলা বদলানো যায় না; নতুন ভার্সন (খসড়া) বানিয়ে বদলান	Approved/archived formulas cannot be changed; create a new version (draft) and change that
+অনেকবার ভুল হয়েছে।	Too many wrong attempts.
+অন্তত একটি আইটেম যোগ করুন	Add at least one item
+অন্তত একটি উপাদান বাছাই করুন	Select at least one ingredient
+অন্তত একটি ফিড ট্রায়াল ফল এন্ট্রি দিন	Enter at least one feed-trial result entry
+অন্য ফোনগুলো সিঙ্ক করতে পারবে	Other phones will be able to sync
+অন্য ফোনে এই IP ও কোড দিন। কোড কাউকে বলবেন না। সন্দেহ হলে নতুন কোড নিন — তখন সব ফোন আবার পেয়ার করতে হবে।	Enter this IP and code on the other phone. Do not tell the code to anyone. If in doubt, get a new code — then all phones must be paired again.
+অন্যান্য	Other
+অন্যান্য (নিজে লিখুন)	Other (write yourself)
+অন্যান্য (৳)	Other (৳)
+অন্যান্য খরচ	Other expenses
+অন্যান্য ভাতা	Other allowances
+অপচয়	Wastage
+অপচয় ক্ষতি	Wastage loss
+অপেক্ষমাণ	Pending
+অপেক্ষমান	Pending
+অপেক্ষা করুন...	Please wait...
+অবচয় খরচ	Depreciation expense
+অবচয়ের অঙ্ক ০ এর বেশি হতে হবে	Depreciation amount must be greater than 0
+অবসরপ্রাপ্ত	Retired
+অবস্থা	Status
+অবস্থা থেকে এই ধাপে যাওয়া যায় না	Cannot move to this step from the current status
+অবস্থা:	Status:
+অবস্থান	Location
+অবৈধ স্তর	Invalid level
+অর্জিত ছুটি	Earned leave
+অর্ডার	Order
+অর্ডারের তারিখ	Order date
+অর্ডারের তারিখ *	Order date *
+অসম্পূর্ণ ডেলিভারি, চালান	Incomplete delivery, challan
+অসুস্থতাজনিত ছুটি	Sick leave
+অস্থায়ী	Temporary
+অ্যাকাউন্ট তৈরি ও প্রবেশ	Create account & enter
+অ্যাকাউন্ট নম্বর	Account number
+অ্যাডজাস্টমেন্ট	Adjustment
+অ্যাডজাস্টমেন্ট সংরক্ষিত হয়েছে	Adjustment saved
+অ্যাডজাস্টমেন্টের কারণ লিখতে হবে	A reason for the adjustment is required
+অ্যাডিটিভ	Additive
+অ্যাপ এখন বন্ধ হবে। আবার খুলে লগইন করুন।	The app will close now. Reopen and sign in.
+অ্যাপ বন্ধ করুন	Close app
+অ্যাপের সংস্করণ মেলেনি (হাব: v	App version mismatch (hub: v
+অ্যাপের সংস্করণ মেলেনি (হাব: ডাটাবেস v	App version mismatch (hub: database v
+অ্যাফ্লাটক্সিন	Aflatoxin
+আংশিক ডেলিভারি	Partial delivery
+আংশিক পৌঁছেছে	Partially arrived
+আংশিক রিসিভ	Partial receipt
+আইটেম	Item
+আইটেম (কেজি)	Item (kg)
+আইটেম *	Item *
+আইটেম কোড দিন	Enter item code
+আইটেম পাওয়া যায়নি	Item not found
+আইটেম বাছাই করুন	Select an item
+আইটেম মুছবেন?	Delete item?
+আইটেম সম্পাদনা	Edit item
+আইটেমে ব্যবহৃত ইউনিট মোছা যাবে না	A unit used by an item cannot be deleted
+আইটেমের নাম দিন	Enter item name
+আউটগোয়িং মুভমেন্টে পরিমাণ ঋণাত্মক হতে হবে	Quantity must be negative for outgoing movement
+আউটপুট	Output
+আউটপুট (কেজি) ধনাত্মক সংখ্যায় দিন	Enter output (kg) as a positive number
+আউটপুট ইনপুটের চেয়ে ৫% এর বেশি হতে পারে না (ইনপুট	Output cannot be more than 5% above input (input
+আউটপুট ঋণাত্মক হতে পারে না	Output cannot be negative
+আউটপুট ০ এর বেশি হতে হবে	Output must be greater than 0
+আক্রান্ত প্রাণী (ঐচ্ছিক)	Affected animals (optional)
+আগে কর্মী সংরক্ষণ করুন	Save the employee first
+আগে কাজ সম্পন্ন করুন	Complete the work first
+আগে ফর্মুলা সংরক্ষণ করুন	Save the formula first
+আগে মাল লোড করুন	Load the goods first
+আগে মাস্টার ডাটায় ফিনিশড গুডস আইটেম যোগ করুন	First add a finished goods item in master data
+আগে হাবের সাথে পেয়ার করুন	Pair with the hub first
+আগের ওষুধযুক্ত ব্যাচের লাইন-ক্লিনিং বাকি। আগে ক্লিনিং চেকলিস্ট শেষ করুন।	Line cleaning of the previous medicated batch is pending. Finish the cleaning checklist first.
+আগের পেমেন্ট	Previous payment
+আছে:	Available:
+আজকের বিক্রি	Today's sales
+আদায়	Collection
+আদায় ইনভয়েসের মোটের বেশি হতে পারে না	Collection cannot exceed the invoice total
+আদায় নিন	Collect payment
+আদায় পাওয়া যায়নি	Collection not found
+আদায় বকেয়ার (	Collection exceeds due (
+আদায় রিভার্স	Reverse collection
+আদায় হয়ে থাকলে আগে আদায় রিভার্স করুন	If collected, reverse the collection first
+আদায় ৳	Collected ৳
+আদায়ের অঙ্ক ঋণাত্মক হতে পারে না	Collection amount cannot be negative
+আদায়ের অঙ্ক সংখ্যায় দিন	Enter the collection amount as a number
+আদায়ের অঙ্ক ০ এর বেশি হতে হবে	Collection amount must be greater than 0
+আদায়ের ইতিহাস	Collection history
+আনুমানিক মোট:	Approximate total:
+আপনার নাম	Your name
+আবার বাছাই	Select again
+আবার হিসাব করুন	Recalculate
+আবেদন	Request
+আবেদন পাওয়া যায়নি	Request not found
+আয়	Income
+আয়ুষ্কাল (মাস)	Useful life (months)
+আয়ুষ্কাল (মাস) সংখ্যায় দিন	Enter useful life (months) as a number
+আয়ুষ্কাল ০ এর বেশি হতে হবে	Useful life must be greater than 0
+আয়ুষ্কাল ১–১২০০ মাসের মধ্যে হতে হবে	Useful life must be between 1–1200 months
+আর্কাইভ	Archive
+আর্দ্রতা	Moisture
+আর্দ্রতা %	Moisture %
+আর্দ্রতা (%)	Moisture (%)
+আর্দ্রতা সঠিক সংখ্যা নয়	Moisture is not a valid number
+আর্দ্রতা সর্বোচ্চ	Moisture maximum
+আর্দ্রতা ০-১০০% এর মধ্যে হতে হবে	Moisture must be between 0-100%
+ইউজারনেম	Username
+ইউজারনেম কমপক্ষে ৩ অক্ষর	Username must be at least 3 characters
+ইউজারনেম বা PIN ভুল	Wrong username or PIN
+ইউজারনেম লিখুন	Enter a username
+ইউনিট	Unit
+ইউনিট *	Unit *
+ইউনিট খরচ ঋণাত্মক হতে পারে না	Unit cost cannot be negative
+ইউনিট পাওয়া যায়নি	Unit not found
+ইউনিট বাছাই করুন	Select a unit
+ইউনিট মুছবেন?	Delete unit?
+ইউনিট সম্পাদনা	Edit unit
+ইউনিটের চিহ্ন দিন	Enter unit symbol
+ইউনিটের নাম দিন	Enter unit name
+ইতিহাস মুছুন	Clear history
+ইনকামিং মুভমেন্টে পরিমাণ ধনাত্মক হতে হবে	Quantity must be positive for incoming movement
+ইনভয়েস	Invoice
+ইনভয়েস (ডেলিভারি বাকি)	Invoice (delivery pending)
+ইনভয়েস id নেই	Invoice id missing
+ইনভয়েস তৈরি করুন	Create invoice
+ইনভয়েস পাওয়া যায়নি	Invoice not found
+ইনভয়েস বাছাই করুন	Select an invoice
+ইনভয়েস বাতিল	Invoice cancelled
+ইনভয়েস লাইন পাওয়া যায়নি	Invoice line not found
+ইনভয়েস:	Invoice:
+ইনভয়েসটি এই ক্রেতার নয়	This invoice does not belong to this customer
+ইনভয়েসের সময় আদায়	Collection at invoicing
+ইনভেন্টরি	Inventory
+ইয়িল্ড	Yield
+ইস্তফা	Resignation
+উইথড্রয়াল দিন ঋণাত্মক হতে পারে না	Withdrawal days cannot be negative
+উইথড্রয়াল দিন পূর্ণসংখ্যা হতে হবে	Withdrawal days must be a whole number
+উইথড্রয়াল পিরিয়ড (দিন)	Withdrawal period (days)
+উইথড্রয়াল:	Withdrawal:
+উদ্দেশ্য	Objective
+উন্নয়ন	Development
+উপরের নিউট্রিয়েন্ট লক্ষ্যমাত্রা মেনে সবচেয়ে সস্তা মিশ্রণ। যেসব উপাদান ব্যবহার করবেন টিক দিন; অবশ্য-লাগবে (প্রিমিক্স/মিনারেল) উপাদানে সর্বনিম্ন % দিন। স্টকে দাম না থাকা বা নিষিদ্ধ আইটেম বাদ যাবে।	Cheapest mix that meets the nutrient targets above. Tick the ingredients you will use; set a minimum % for must-have ingredients (premix/mineral). Items with no price in stock or prohibited items are excluded.
+উপস্থিত	Present
+উপস্থিত+ছুটি+অনুপস্থিত মাসের দিনের বেশি হতে পারে না	Present+leave+absent cannot exceed days in the month
+উপাদান (গ্রাম প্রতি টন খাদ্যে)	Ingredients (grams per ton of feed)
+উপাদান যোগ করলে নিউট্রিয়েন্ট ও খরচ এখানে দেখা যাবে।	Add ingredients to see nutrients and cost here.
+উপাদান:	Ingredient:
+উপাদানগুলোর সর্বনিম্ন % এর যোগফল	Sum of ingredient minimum %
+উপাদানগুলোর সর্বোচ্চ % এর যোগফল	Sum of ingredient maximum %
+উপাদানের খরচ ঋণাত্মক হতে পারে না	Ingredient cost cannot be negative
+উপাদানের পরিমাণ ঋণাত্মক হতে পারে না	Ingredient quantity cannot be negative
+উৎপাদন	Production
+উৎপাদন (ইন)	Production (in)
+উৎপাদনে ব্যবহার	Used in production
+উৎপাদনের তারিখ	Production date
+উৎস ও গন্তব্য গুদাম আলাদা হতে হবে	Source and destination warehouses must differ
+উৎস গুদাম *	Source warehouse *
+উৎস গুদাম বাছাই করুন	Select source warehouse
+উৎস গুদামে পর্যাপ্ত স্টক নেই (আছে	Not enough stock in the source warehouse (available
+উৎস গুদামে স্টক:	Stock in source warehouse:
+ঋণ	Loan
+এই PO এখন রিসিভ করা যাবে না (	This PO cannot be received now (
+এই PO তে নেই	Not on this PO
+এই PO র রিসিভ	Receipt of this PO
+এই অবস্থা থেকে সরাসরি এখানে যাওয়া যায় না	Cannot go directly here from this status
+এই অবস্থার PO বাতিল করা যায় না	A PO in this status cannot be cancelled
+এই আদায় ইতিমধ্যে রিভার্স হয়েছে	This collection has already been reversed
+এই আদায় রিভার্স করুন	Reverse this collection
+এই ইউজার নিষ্ক্রিয়। মালিকের সাথে যোগাযোগ করুন	This user is inactive. Contact the owner
+এই ইনভয়েসে ডেলিভারি প্ল্যান করা যায় না (	Delivery cannot be planned for this invoice (
+এই কর্মীর	This employee's
+এই কাজের অনুমতি নেই:	You do not have permission for this action:
+এই কোড (	This code (
+এই কোডে আরেকটি মেশিন আছে	Another machine has this code
+এই খসড়া ফর্মুলা মুছে ফেলা হবে। নিশ্চিত?	This draft formula will be deleted. Sure?
+এই ট্রিপে আর লোড করা যায় না	Nothing more can be loaded on this trip
+এই ঠিকানায় অন্য একটি হাব পাওয়া গেছে; আবার পেয়ার করুন	Another hub was found at this address; pair again
+এই নম্বরের গাড়ি আগেই আছে	A vehicle with this number already exists
+এই নামে ছুটির ধরন আছে	A leave type with this name exists
+এই নোটের ডেলিভারি ইতিমধ্যে নিশ্চিত করা হয়েছে	Delivery of this note is already confirmed
+এই নোটের মাল ইতিমধ্যে লোড হয়েছে	Goods of this note are already loaded
+এই পরিকল্পিত ব্যাচ বাতিল হবে। নিশ্চিত?	This planned batch will be cancelled. Sure?
+এই ফর্মুলা একটি R&D ট্রায়ালের অংশ (	This formula is part of an R&D trial (
+এই ফোন	This phone
+এই ফোন হাব নয়	This phone is not the hub
+এই ফোনকে হাব বানাই	Make this phone the hub
+এই ফোনে লগইন মনে রাখুন (৩০ দিন)	Keep me signed in on this phone (30 days)
+এই ফোনের IP	This phone's IP
+এই ফোনের বর্তমান ডাটা বদলে যাবে। নিশ্চিত?	This phone's current data will be replaced. Sure?
+এই বছর	This year
+এই বছরের প্রাপ্য ঠিক করা নেই	This year's entitlement is not set
+এই বছরের প্রাপ্য তৈরি	Create this year's entitlement
+এই ভাউচার ইতিমধ্যে রিভার্স করা হয়েছে	This voucher has already been reversed
+এই ভার্সন	This version
+এই মাস	This month
+এই মাসের বেতন অনুমোদিত হয়ে গেছে	This month's payroll is already approved
+এই মাসের বেতন অনুমোদিত হয়ে গেছে; আর বদলানো যায় না	This month's payroll is approved; it can no longer be changed
+এই মাসের বেতন হিসাব করুন (খসড়া)	Calculate this month's payroll (draft)
+এই মাসের বোনাস ও জরিমানা	This month's bonuses and fines
+এই রোলের জন্য এখনও কোনো মডিউল চালু নেই।	No modules are enabled for this role yet.
+এই লাইন বাদ দিন	Remove this line
+এই সময়ে আরেকটি ছুটির আবেদন আছে	Another leave request exists in this period
+এই সময়ে কোনো কার্যদিবস নেই (সব ছুটির দিন)	No working days in this period (all holidays)
+এই স্টপের ডেলিভারি আগেই নিশ্চিত হয়েছে	Delivery for this stop is already confirmed
+এইচআর	HR
+এইচআর প্রশাসন	HR administration
+এক আবেদন এক বছরের মধ্যে হতে হবে	A request must fall within one year
+এক আবেদনে এক বছরের বেশি ছুটি হয় না	One request cannot cover more than a year of leave
+একই আইটেম দুইবার দেওয়া যাবে না	The same item cannot be given twice
+একই উপাদান একাধিকবার আছে	The same ingredient appears more than once
+একই উপাদান একাধিকবার আছে:	The same ingredient appears more than once:
+একই উপাদান একাধিকবার দেওয়া যাবে না	The same ingredient cannot be given more than once
+একই লাইন দুইবার দেওয়া যাবে না	The same line cannot be given twice
+একই লাইনে ডেবিট ও ক্রেডিট দুটোই দেওয়া যাবে না	Debit and credit cannot both be given on the same line
+একক	Unit
+একক (কেজি/ব্যাগ)	Unit (kg/bag)
+একটি ট্রিপে একই গুদামের নোট থাকতে হবে	Notes on one trip must be from the same warehouse
+একটি লাইনে আইটেম বাছাই করা হয়নি	An item is not selected on one line
+এখন কোনো প্রিভেন্টিভ কাজ হয়ে ওঠেনি	No preventive work has come due now
+এখন ডাটাবেস ব্যস্ত; কিছুক্ষণ পরে আবার চেষ্টা করুন	The database is busy; try again shortly
+এখনই আদায় (৳, ঐচ্ছিক)	Collect now (৳, optional)
+এখনই সিঙ্ক	Sync now
+এখনও কোনো ইনভয়েস নেই	No invoices yet
+এখনও কোনো কর্মী নেই	No employees yet
+এখনও কোনো খরচ নেই	No expenses yet
+এখনও কোনো টেস্ট নেই।	No tests yet.
+এখনও কোনো ট্রায়াল নেই	No trials yet
+এখনও কোনো ট্রিপ নেই	No trips yet
+এখনও কোনো ডেলিভারি নোট নেই	No delivery notes yet
+এখনও কোনো ফল নেই	No results yet
+এখনও কোনো বেতন রান নেই	No payroll runs yet
+এখনও কোনো ব্যাকআপ নেওয়া হয়নি — 'ব্যাকআপ ও রিস্টোর' থেকে নিন।	No backup has been taken yet — take one from 'Backup & Restore'.
+এখনও কোনো মেশিন নেই	No machines yet
+এটা নতুন ফোন? হাবের সাথে যুক্ত হয়ে ইউজার আনুন	New phone? Connect to the hub to bring users
+এটি এই অ্যাপের ব্যাকআপ ফাইল নয়	This is not a backup file of this app
+এটি ব্যাকআপ ফাইল নয় (খুব ছোট)	This is not a backup file (too small)
+এমন কোনো নোট নেই। আগে ডেলিভারি নোট তৈরি করুন।	No such notes. Create a delivery note first.
+ওজন ঋণাত্মক হতে পারে না	Weight cannot be negative
+ওজন স্কেল	Weighing scale
+ওভারটাইম (মিনিট)	Overtime (minutes)
+ওভারটাইম রেট	Overtime rate
+ওভারটাইম রেট/ঘণ্টা (ফাঁকা = ডিফল্ট)	Overtime rate/hour (blank = default)
+ওভাররাইডের কারণ লিখুন	Enter the reason for the override
+ওভারহেড	Overhead
+ওভারহেড খরচ	Overhead cost
+ওয়ার্ক অর্ডার	Work order
+ওয়ার্ক অর্ডার / ব্রেকডাউন	Work order / Breakdown
+ওয়ার্ক অর্ডার id নেই	Work order id missing
+ওয়ার্ক অর্ডার পাওয়া যায়নি	Work order not found
+ওয়ার্ক অর্ডার বন্ধ করুন	Close work order
+ওষুধ	Medicine
+ওষুধ / প্রিমিক্স / অ্যাডিটিভ তথ্য	Medicine / Premix / Additive information
+ওষুধ ও প্রিমিক্স গুদাম	Medicine & premix warehouse
+ওষুধ গুদাম	Medicine warehouse
+ওষুধ/নিয়ন্ত্রিত আইটেম শুধু ওষুধ গুদামে ট্রান্সফার করা যাবে	Medicine/controlled items can only be transferred to the medicine warehouse
+ওষুধযুক্ত চিহ্নিত, কিন্তু ফর্মুলায় কোনো ওষুধ (MEDICINE) উপাদান নেই	Marked medicated, but the formula has no medicine (MEDICINE) ingredient
+ওষুধযুক্ত ফর্মুলায় লক্ষ্য প্রজাতি (targetSpecies) দিতে হবে	A medicated formula must specify the target species (targetSpecies)
+ওষুধযুক্ত ফিড (Medicated)	Medicated feed
+ওষুধযুক্ত ব্যাচের অবশিষ্ট ফিড আলাদা করে চিহ্নিত/নষ্ট করা হয়েছে	Leftover feed of the medicated batch has been separated and marked/discarded
+ওষুধের সক্রিয় উপাদান (Active Ingredient) দিন	Enter the active ingredient of the medicine
+কখনও নেওয়া হয়নি	Never taken
+কত কেজি পাঠানো হবে	How many kg to send
+কনভেয়র, এলিভেটর ও হপার ঝাড়া/ভ্যাকুয়াম করা হয়েছে	Conveyor, elevator and hopper swept/vacuumed
+কম	Low
+কম স্টক আইটেম	Low-stock items
+কমপক্ষে একটি আইটেম যোগ করুন	Add at least one item
+কমপক্ষে একটি ডেলিভারি নোট বাছাই করুন	Select at least one delivery note
+কমপক্ষে একটি লাইনে ফেরত পরিমাণ দিন	Enter a return quantity on at least one line
+কমপক্ষে একটি লাইনের পরিমাণ দিন	Enter a quantity on at least one line
+কমপক্ষে একটি সীমা (সর্বনিম্ন বা সর্বোচ্চ) দিন	Give at least one limit (minimum or maximum)
+কমপক্ষে একটি সীমা দিন। সীমা আইন/স্পেক অনুযায়ী আপনি ঠিক করবেন।	Give at least one limit. You decide limits according to law/spec.
+কমান	Decrease
+কর্তন	Deduction
+কর্মচারী অগ্রিম	Employee advance
+কর্মী	Employee
+কর্মী আগেই সক্রিয় নন	Employee is already active
+কর্মী ও বেতন	Employees & Payroll
+কর্মী নং	Employee no.
+কর্মী পাওয়া যায়নি	Employee not found
+কর্মী বাছাই করুন	Select an employee
+কর্মীর নাম লিখুন	Enter the employee's name
+কলাম	Column
+কলামের নাম অবৈধ	Column name is invalid
+কাঁচামাল	Raw materials
+কাঁচামাল ও ওষুধ	Raw materials & medicine
+কাঁচামাল গুদাম	Raw material warehouse
+কাঁচামাল মজুদ	Raw material stock
+কাঁচামাল যে গুদাম থেকে যাবে	Warehouse the raw materials will leave from
+কাগজ	Document
+কাগজ:	Document:
+কাগজপত্র	Documents
+কাগজের নাম (NID/লাইসেন্স/চুক্তি...)	Document name (NID/licence/contract...)
+কাগজের নাম লিখুন	Enter the document name
+কাজ আবার শুরু	Resume work
+কাজ শুরু	Start work
+কাজ সম্পন্ন	Work completed
+কাজ সম্পন্ন করুন	Complete work
+কাজের নাম (যেমন গ্রিজিং)	Task name (e.g. greasing)
+কাজের ফল	Work result
+কাজের শিরোনাম লিখুন	Enter the work title
+কার জন্য	For whom
+কারণ	Reason
+কারণ (আবশ্যক)	Reason (required)
+কারণ (বাধ্যতামূলক)	Reason (mandatory)
+কারণ *	Reason *
+কারণ:	Reason:
+কারণ=	Reason=
+কার্যকর তারিখ	Effective date
+কার্যকরের তারিখ দিন	Enter the effective date
+কার্যদিবস ·	Working days ·
+কাস্টমার	Customer
+কিছু নেই	Nothing
+কিছু পাওয়া যায়নি	Nothing found
+কিমি সংখ্যায় দিন	Enter km as a number
+কিস্তি বণ্টনে গরমিল (	Installment distribution mismatch (
+কিস্তির অঙ্ক ঠিক নয়	Installment amount is not valid
+কী করা হয়েছে	What was done
+কী কাজ করা হয়েছে লিখুন	Write what work was done
+কী ঠিক নয়	What is wrong
+কী বদলাতে চান	What do you want to change
+কী বদলাতে চান লিখুন	Write what you want to change
+কী ব্যবস্থা নেওয়া হয়েছে লিখুন	Write what action was taken
+কী ব্যবস্থা নেওয়া হলো	What action was taken
+কীভাবে দেওয়া হলো	How it was given
+কুলার	Cooler
+কে মাল বুঝে নিয়েছে তার নাম লিখুন	Write the name of the person who received the goods
+কেজি	kg
+কেজি × ৳	kg × ৳
+কেজি ঘাটতি (শুধু QC-পাস ও মেয়াদোত্তীর্ণ নয় এমন স্টক গোনা হয়েছে)	kg short (only QC-passed, non-expired stock was counted)
+কেজি প্রতি খরচ:	Cost per kg:
+কেজি — কিছু নোট বাদ দিন	kg — drop some notes
+কেজি)	kg)
+কেজি) এর বেশি	kg) more than
+কেজি)। কেজি/গ্রাম ঠিক আছে কি দেখুন।	kg). Check that kg/gram is right.
+কেজি, আগে ফেরত	kg, returned earlier
+কেজি, এর বেশি প্ল্যান করা যায় না	kg, cannot plan more than this
+কেজি, গাড়ির ক্ষমতা	kg, vehicle capacity
+কেজি, মোট খরচ	kg, total cost
+কোড	Code
+কোড (ইউনিক)	Code (unique)
+কোড *	Code *
+কোড সংরক্ষণ	Save code
+কোথায় রাখা/নোট	Where kept / note
+কোন লট থেকে কত যাবে (FEFO)	Which lot and how much goes (FEFO)
+কোনো PO নেই	No POs
+কোনো অগ্রিম/ঋণ নেই	No advances/loans
+কোনো অনুমোদিত ফর্মুলা নেই; আগে ফর্মুলা অনুমোদন করুন	No approved formula; approve a formula first
+কোনো অ্যালার্ট নেই	No alerts
+কোনো আইটেম নেই	No items
+কোনো আদায় নেই	No collections
+কোনো আবেদন নেই	No requests
+কোনো ইউনিট নেই	No units
+কোনো উপাদান বাছাই করা হয়নি	No ingredients selected
+কোনো ওয়ার্ক অর্ডার নেই	No work orders
+কোনো খরচ নেই	No expenses
+কোনো গুদাম নেই	No warehouses
+কোনো টেস্ট নেই; আগে টেস্ট এন্ট্রি দিন (ম্যানেজার ওভাররাইট করতে পারেন)	No tests; enter test entries first (a manager can override)
+কোনো ডেলিভারি নোট পাওয়া যায়নি	No delivery notes found
+কোনো দ্বন্দ্ব নেই	No conflicts
+কোনো পার্টি নেই	No parties
+কোনো ফর্মুলা নেই। + চেপে নতুন ফর্মুলা বানান।	No formulas. Press + to create a new formula.
+কোনো ফিডব্যাক নেই	No feedback
+কোনো ফিনিশড গুডস আইটেম নেই	No finished goods items
+কোনো বকেয়া নেই	No outstanding dues
+কোনো বাকি নেই	Nothing due
+কোনো ব্যাচ নেই। + চেপে নতুন ব্যাচ বানান।	No batches. Press + to create a new batch.
+কোনো মুভমেন্ট নেই	No movements
+কোনো রান নেই	No runs
+কোনো রিসিভ নেই	No receipts
+কোনো লট নেই	No lots
+কোনো লট স্টকে নেই	No lots in stock
+কোনো লাইন নেই	No lines
+কোনো লেনদেন নেই	No transactions
+কোনো সরকারি/প্রতিষ্ঠান ছুটি যোগ করা নেই	No public/company holidays added
+ক্যামেরার অনুমতি দেওয়া হয়নি; ফোনের সেটিংসে অ্যাপকে ক্যামেরা অনুমতি দিন।	Camera permission was not granted; give the app camera permission in phone settings.
+ক্যালসিয়াম	Calcium
+ক্যালিব্রেশন	Calibration
+ক্যাশ	Cash
+ক্যাশবুক	Cash book
+ক্রয়	Purchase
+ক্রয় (ইন)	Purchase (in)
+ক্রয় অর্ডার (PO)	Purchase order (PO)
+ক্রয়মূল্য (৳)	Purchase price (৳)
+ক্রয়মূল্য ঋণাত্মক হতে পারে না	Purchase price cannot be negative
+ক্রয়মূল্য সংখ্যায় দিন	Enter the purchase price as a number
+ক্রেডিট	Credit
+ক্রেডিট লিমিট (টাকা)	Credit limit (taka)
+ক্রেডিট লিমিট ঋণাত্মক হতে পারে না	Credit limit cannot be negative
+ক্রেডিট লিমিট ছাড়িয়ে যাবে (অতিরিক্ত	Will exceed the credit limit (excess
+ক্রেডিট লিমিট সঠিক সংখ্যা নয়	Credit limit is not a valid number
+ক্রেডিট লিমিট:	Credit limit:
+ক্রেতা	Customer
+ক্রেতা (কাস্টমার/ডিলার) বাছাই করুন	Select customer (customer/dealer)
+ক্রেতা বাছাই করুন	Select a customer
+ক্রেতা:	Customer:
+ক্রেতার মোট বাকি (লেজার)	Customer's total due (ledger)
+ক্ষমতা (কেজি/ঘণ্টা)	Capacity (kg/hour)
+ক্ষমতা সংখ্যায় দিন	Enter the capacity as a number
+ক্ষমতা সঠিক নয়	Capacity is not valid
+খরচ	Expense
+খরচ অনুমোদন	Expense approval
+খরচ ঋণাত্মক হতে পারে না	Expense cannot be negative
+খরচ পাওয়া যায়নি	Expense not found
+খরচ প্রতি কেজি	Cost per kg
+খরচ প্রতি টন	Cost per ton
+খরচ প্রত্যাখ্যাত; খরচ ঠিক করে আবার সম্পন্ন করুন	Expense rejected; fix the expense and complete again
+খরচ বাতিল	Expense cancelled
+খরচ বেশি হওয়ায় ম্যানেজারের অনুমোদন লাগবে।	Manager approval is needed because the expense is high.
+খরচ ভয়েড	Expense voided
+খরচ সীমার বেশি; ম্যানেজারের অনুমোদন বাকি	Expense exceeds the limit; manager approval pending
+খরচ ≈ ৳	Cost ≈ ৳
+খরচের অঙ্ক ০ এর বেশি হতে হবে	Expense amount must be greater than 0
+খরচের খাত বাছাই করুন	Select an expense category
+খরচের খাত সঠিক নয়	Expense category is not valid
+খরচের ধরন ঠিক নয়	Expense type is not valid
+খরচের বিবরণ লিখুন	Write the expense description
+খসড়া	Draft
+খসড়া মুছুন	Delete draft
+খসড়া সংরক্ষণ	Save draft
+খসড়া সংরক্ষণ করুন	Save the draft
+খাত	Category
+খাদ্য গ্রহণ	Feed intake
+খাদ্য গ্রহণ ঋণাত্মক বা অবৈধ হতে পারবে না	Feed intake cannot be negative or invalid
+খাদ্যের দাম ঋণাত্মক হতে পারবে না	Feed price cannot be negative
+খাদ্যের দাম টাকা/কেজি (ঐচ্ছিক)	Feed price taka/kg (optional)
+খাদ্যের দাম ঠিক নয়	Feed price is not valid
+খামারের নাম	Farm name
+খামারের নাম লিখুন	Enter the farm name
+খুঁজুন	Search
+খোলা	Open
+গণনায় পাওয়া স্টকের সাথে খাতার স্টক না মিললে এখানে সংশোধন করুন। কারণ লেখা বাধ্যতামূলক এবং অডিট লগে থাকবে।	If book stock does not match the counted stock, correct it here. A reason is mandatory and is kept in the audit log.
+গত মাস	Last month
+গন্তব্য গুদাম *	Destination warehouse *
+গন্তব্য গুদাম পাওয়া যায়নি	Destination warehouse not found
+গন্তব্য গুদাম বাছাই করুন	Select destination warehouse
+গাড়ি	Vehicle
+গাড়ি ও ড্রাইভার	Vehicles & drivers
+গাড়ি বাছাই করুন	Select a vehicle
+গাড়ি সম্পাদনা	Edit vehicle
+গাড়ি/ড্রাইভার	Vehicle/driver
+গাড়ির ধরন লিখুন	Enter the vehicle type
+গাড়ির নম্বর লিখুন	Enter the vehicle number
+গুডস রিসিভ	Goods receipt
+গুডস রিসিভ তালিকা	Goods receipt list
+গুডস রিসিভে QC লাগবে	QC required on goods receipt
+গুদাম	Warehouse
+গুদাম (যেখান থেকে ডেলিভারি)	Warehouse (delivering from)
+গুদাম *	Warehouse *
+গুদাম ট্রান্সফার	Warehouse transfer
+গুদাম পাওয়া যায়নি	Warehouse not found
+গুদাম বাছাই করুন	Select a warehouse
+গুদাম মুছবেন?	Delete warehouse?
+গুদাম সম্পাদনা	Edit warehouse
+গুদাম:	Warehouse:
+গুদামের নাম *	Warehouse name *
+গুদামের নাম দিন	Enter the warehouse name
+গুরুত্ব	Severity
+গুরুত্ব ১–৩ হতে হবে	Severity must be 1–3
+গ্রহীতা	Recipient
+গ্রহীতা:	Recipient:
+গ্রহীতার নাম	Recipient's name
+গ্রাইন্ডার	Grinder
+গ্রাইন্ডার/পেলেট মিলের ডাই ও চেম্বার পরিষ্কার	Grinder/pellet mill die and chamber cleaned
+গ্রাম	Gram
+গ্রাম/টন	Gram/ton
+গ্রাম/টন (	Gram/ton (
+গ্রাম/টন পেরিয়েছে	Exceeded gram/ton
+গ্রাম/টন)	Gram/ton)
+গ্রাম/টন, সর্বনিম্ন কার্যকর ডোজ	Gram/ton, minimum effective dose
+গ্রাম/টন, সর্বোচ্চ সীমা	Gram/ton, maximum limit
+গ্রাম/টনের কম	Less than gram/ton
+গ্রাম/প্রাণী	Gram/animal
+গ্রাম; এক টন (১০,০০,০০০ গ্রাম) হতে হবে	grams; must be one ton (1,000,000 grams)
+গ্রামে রূপান্তর গুণক সঠিক সংখ্যা নয়	Gram conversion factor is not a valid number
+গ্রামে রূপান্তর গুণক ০ এর বেশি হতে হবে	Gram conversion factor must be greater than 0
+গ্রুপ	Group
+গ্রুপের নাম (যেমন নতুন ফর্মুলা / কন্ট্রোল)	Group name (e.g. new formula / control)
+গ্রুপের নাম লিখুন	Enter the group name
+গ্রুপের ফল	Group result
+ঘণ্টা	Hours
+ঘণ্টা ঋণাত্মক হতে পারে না	Hours cannot be negative
+ঘণ্টা ঠিক নয়	Hours are not valid
+ঘণ্টা-খরচ (৳, ঐচ্ছিক)	Cost per hour (৳, optional)
+ঘণ্টা-খরচ ঋণাত্মক হতে পারে না	Cost per hour cannot be negative
+ঘণ্টা-খরচ টাকায় সংখ্যা দিন	Enter cost per hour in taka as a number
+ঘণ্টার ব্যবধান ০ এর বেশি দিন	Give an interval of more than 0 hours
+ঘনত্ব	Density
+ঘনত্ব (%)	Density (%)
+ঘনত্ব ০-১০০% এর মধ্যে হতে হবে	Density must be between 0-100%
+ঘাটতি	Shortfall
+চলমান	Running
+চলমান ব্যাচ	Batches running
+চলমান ব্যাচে মেশিন রান যোগ করা যায়	Machine runs can be added to a running batch
+চাকরি শেষ	Service ended
+চালান	Challan
+চালু	Active
+চালু গাড়ি বাছাই করুন	Select an active vehicle
+চালু ড্রাইভার বাছাই করুন	Select an active driver
+চালু থাকার ঘণ্টা	Running hours
+চালু থাকার ঘণ্টা ধনাত্মক সংখ্যায় দিন	Enter running hours as a positive number
+চালু ✔	Active ✔
+চালু-ঘণ্টা অনুযায়ী	By running hours
+চিকিৎসা	Medical
+চিহ্ন * (যেমন kg)	Symbol * (e.g. kg)
+চুক্তিভিত্তিক	Contractual
+চেকলিস্ট	Checklist
+চেকলিস্ট (প্রতি লাইনে একটি)	Checklist (one per line)
+চেকলিস্ট আইটেম পাওয়া যায়নি	Checklist item not found
+চেকলিস্টের	checklist's
+ছাই (অ্যাশ)	Ash
+ছাড়ার কারণ লিখুন	Write the reason for leaving
+ছুটি	Leave
+ছুটি/আরও	Leave/More
+ছুটি:	Leave:
+ছুটির আবেদন	Leave request
+ছুটির দিন	Holiday
+ছুটির ধরন পাওয়া যায়নি	Leave type not found
+ছুটির ধরন বাছাই করুন	Select a leave type
+ছুটির নাম লিখুন	Enter the holiday name
+ছেড়ে গেছেন / চাকরি শেষ	Left / service ended
+জনের কিছু দিনের হাজিরা তোলা নেই (মাসিক বেতনভোগী হলে উপস্থিত ধরা হয়েছে)	persons have some days' attendance not entered (monthly-salaried counted as present)
+জমা	Deposit
+জমা দিন	Submit
+জমা দেওয়া (QC অপেক্ষমান)	Submitted (QC pending)
+জমা দেওয়ার পর ফল বদলানো যায় না	Results cannot be changed after submission
+জরিমানা	Fine
+জরিমানার কারণ লিখুন	Write the reason for the fine
+জরুরি	Urgent
+জানানো হয়েছে	Notified
+জীবিত	Alive
+জেনারেটর	Generator
+জ্বালানি	Fuel
+টন	Ton
+টাকা	Taka
+টাকা অগ্রিম/ঋণ বাকি; আগে সমন্বয় করুন (ছাড়ার তারিখ পর্যন্ত বেতন রানে কাটা যাবে)	taka of advance/loan is outstanding; settle first (will be deducted in payroll up to the leaving date)
+টাকা ঋণাত্মক হতে পারে না	Taka cannot be negative
+টাকা)	taka)
+টাকা) বেশি হতে পারে না; বাড়তি অংশ অগ্রিম হিসেবে আলাদা জমা করুন	taka) cannot be exceeded; deposit the excess separately as an advance
+টাকা/সময় ঋণাত্মক হতে পারে না	Taka/time cannot be negative
+টাকায় সংখ্যা দিন	Enter the amount in taka as a number
+টাকার অঙ্ক ঋণাত্মক হতে পারবে না	Taka amount cannot be negative
+টি ধাপ বাকি; আগে সব টিক দিন	steps remain; tick all first
+টি প্রাপ্য ছুটি তৈরি হয়েছে (আগেরগুলো অপরিবর্তিত)।	entitlements were created (existing ones unchanged).
+টি প্রিভেন্টিভ ওয়ার্ক অর্ডার তৈরি হয়েছে	preventive work orders were created
+টি স্লিপ তৈরি হয়েছে।	slips were created.
+টেবিলের নাম অবৈধ	Table name is invalid
+টেস্ট ফল (প্রতি প্যারামিটারের সর্বশেষটাই গণ্য)	Test results (only the latest per parameter counts)
+টেস্ট সংরক্ষণ	Save test
+টেস্টের মান ঋণাত্মক হতে পারে না	Test value cannot be negative
+টেস্টের মান দিন	Enter the test value
+টেস্টের মান সংখ্যায় দিন	Enter the test value as a number
+টেস্টের মান সঠিক সংখ্যা নয়	Test value is not a valid number
+টোল	Toll
+ট্রাক	Truck
+ট্রান্সফার	Transfer
+ট্রান্সফার করুন	Transfer now
+ট্রান্সফার সম্পন্ন হয়েছে	Transfer completed
+ট্রায়াল	Trial
+ট্রায়াল পাওয়া যায়নি	Trial not found
+ট্রায়াল ব্যালেন্স	Trial balance
+ট্রায়াল শুরু	Start trial
+ট্রায়ালের উদ্দেশ্য লিখুন	Write the objective of the trial
+ট্রিপ	Trip
+ট্রিপ id নেই	Trip id missing
+ট্রিপ তৈরি করুন	Create trip
+ট্রিপ পাওয়া যায়নি	Trip not found
+ট্রিপ রাস্তায় নেই	Trip is not on the road
+ট্রিপ শেষ	Trip ended
+ট্রিপ শেষ করুন	End trip
+ট্রিপ শেষে ডেলিভারি হয়নি	Not delivered at the end of the trip
+ঠিক আছে	OK
+ঠিকানা	Address
+ডাউনটাইম (মিনিট) পূর্ণসংখ্যায় দিন	Enter downtime (minutes) as a whole number
+ডাউনটাইম (মিনিট, ঐচ্ছিক)	Downtime (minutes, optional)
+ডাউনটাইম ঋণাত্মক হতে পারে না	Downtime cannot be negative
+ডাউনটাইম রানের সময়ের চেয়ে বেশি হতে পারে না	Downtime cannot exceed run time
+ডাউনটাইমের কারণ	Reason for downtime
+ডাউনটাইমের কারণ লিখুন	Write the reason for downtime
+ডাটাবেস	Database
+ডাটাবেস কী ৩২ বাইটের হতে হবে	Database key must be 32 bytes
+ডাটাবেস ফাইল খালি	Database file is empty
+ডাটাবেস ফাইলের আকার সীমার বাইরে	Database file size is out of range
+ডাটাবেসের আকার ঠিক নয়	Database size is not valid
+ডার্ক	Dark
+ডিভাইস কোড (প্রতি ফোনে আলাদা: S1, S2, M1…)	Device code (different per phone: S1, S2, M1…)
+ডিভাইস কোড সংরক্ষিত:	Device code saved:
+ডিভাইস কোড ২–৪ অক্ষর/সংখ্যার হতে হবে (যেমন S1, M1)	Device code must be 2–4 letters/digits (e.g. S1, M1)
+ডিম উৎপাদন	Egg production
+ডিমের সংখ্যা ঋণাত্মক হতে পারবে না	Egg count cannot be negative
+ডিমের সংখ্যা ঠিক নয়	Egg count is not valid
+ডিলার	Dealer
+ডিসকাউন্ট	Discount
+ডিসকাউন্ট (৳)	Discount (৳)
+ডিসকাউন্ট ঋণাত্মক হতে পারে না	Discount cannot be negative
+ডিসকাউন্ট বণ্টনে গরমিল	Discount allocation mismatch
+ডিসকাউন্ট মোটের চেয়ে বেশি হতে পারে না	Discount cannot be more than the total
+ডিসকাউন্ট মোটের বেশি হতে পারে না	Discount cannot exceed the total
+ডিসকাউন্ট সীমার বেশি	Exceeds discount limit
+ডিস্ট্রিবিউশন	Distribution
+ডেবিট	Debit
+ডেবিট (	Debit (
+ডেলিভারি নিশ্চিত	Delivery confirmed
+ডেলিভারি নিশ্চিত করুন	Confirm delivery
+ডেলিভারি নোট	Delivery note
+ডেলিভারি নোট (চালান)	Delivery note (challan)
+ডেলিভারি নোট তৈরি করুন	Create delivery note
+ডেলিভারি নোট পাওয়া যায়নি	Delivery note not found
+ডেলিভারি নোট বাছাই (প্ল্যান করা, ট্রিপে নেই)	Select delivery notes (planned, not on a trip)
+ডেলিভারি পরিমাণ লোডের বেশি বা ঋণাত্মক হতে পারে না	Delivered quantity cannot exceed the load or be negative
+ডেলিভারি পরিমাণ সংখ্যায় দিন	Enter the delivered quantity as a number
+ডেলিভারি বাকি	Delivery pending
+ডেলিভারি শুরু হয়ে গেলে বা ইতিমধ্যে বাতিল হলে ইনভয়েস বাতিল করা যায় না	An invoice cannot be cancelled once delivery has started or it is already cancelled
+ডেলিভারি সম্পন্ন	Delivery completed
+ডেলিভারি হয়নি এমন ইনভয়েসে ফেরত হয় না	No return on an invoice that has not been delivered
+ডেলিভারি হয়নি — স্টকে ফেরত	Not delivered — back to stock
+ডেলিভারি হয়ে যাওয়া স্টপ ব্যর্থ করা যায় না	A stop already delivered cannot be marked failed
+ডেলিভারি হয়েছে	Delivered
+ডেলিভারি:	Delivery:
+ডেলিভারির তারিখ	Delivery date
+ডেলিভারির পরিমাণ সংখ্যায় দিন	Enter the delivery quantity as a number
+ডেলিভারির পরিমাণ ০ এর বেশি হতে হবে	Delivery quantity must be greater than 0
+ডোজ ঋণাত্মক হতে পারে না	Dose cannot be negative
+ডোজ:	Dose:
+ডোজিং সিস্টেম	Dosing system
+ড্রাইভার	Driver
+ড্রাইভার বাছাই করুন	Select a driver
+ড্রাইভার ভাতা	Driver allowance
+ড্রাইভার সম্পাদনা	Edit driver
+ড্রাইভারের নাম লিখুন	Enter the driver's name
+ড্রায়ার	Dryer
+তারিখ	Date
+তারিখ *	Date *
+তারিখ ঠিক নয়	Date is not valid
+তারিখ দিন	Enter a date
+তারিখ:	Date:
+তৈরি পণ্য	Finished goods
+তৈরি পণ্য (ফিনিশড গুডস আইটেম) বাছাই করুন	Select finished goods (finished goods item)
+তৈরি ফিড যে গুদামে জমা হবে	Warehouse where finished feed will be stored
+তৈরি হলে বেসের লাইনসহ একটি নতুন খসড়া ফর্মুলা হবে। লাইন বদলাতে ফর্মুলেশন মেনুতে ওই খসড়া খুলুন।	When created, a new draft formula with the base's lines will be made. To change lines, open that draft in the Formulation menu.
+তোলা হয়নি	Not recorded
+থাক	Leave it
+থিম বদলান	Change theme
+দর (কেজি)	Rate (kg)
+দর (টাকা/কেজি) *	Rate (taka/kg) *
+দর (টাকা/কেজি) সঠিক সংখ্যা নয়	Rate (taka/kg) is not a valid number
+দর ঋণাত্মক হতে পারে না	Rate cannot be negative
+দর/কেজি	Rate/kg
+দাম (টাকা/কেজি) সংখ্যায় দিন	Enter the price (taka/kg) as a number
+দাম (৳/কেজি)	Price (৳/kg)
+দাম তালিকা থেকে আসে; বদলাতে ম্যানেজারের অনুমতি লাগে।	Price comes from the price list; changing it needs manager permission.
+দাম নেই (স্টকে ক্রয়মূল্য নেই):	No price (no purchase price in stock):
+দাম ০ এর বেশি হতে হবে	Price must be greater than 0
+দামের তালিকা	Price list
+দামের তালিকা (৳/কেজি)	Price list (৳/kg)
+দিন	Day
+দিন (লেবেল/ইনভয়েসে দিতে হবে)	Days (must be given on label/invoice)
+দিন অনুযায়ী	By days
+দিন আগে — নতুন ব্যাকআপ নিন।	days ago — take a new backup.
+দিন ঠিক নয়	Day is not valid
+দিন ০–৩৬৬ হতে হবে	Days must be 0–366
+দিন)	days)
+দিন, চাওয়া	days, requested
+দিনের ব্যবধান ০ এর বেশি দিন	Give an interval of more than 0 days
+দিনের সংখ্যা ঋণাত্মক হতে পারে না	Number of days cannot be negative
+দিনের সংখ্যা ০ এর বেশি হতে হবে	Number of days must be greater than 0
+দুই PIN মেলেনি	The two PINs do not match
+দুই পাসফ্রেজ মেলেনি	The two passphrases do not match
+দুই ফোনে একই কোড থাকলে ইনভয়েস নম্বর মিলে যাবে ও সিঙ্কে দ্বন্দ্ব হবে। কোড সংরক্ষণ করুন প্রথম সিঙ্কের আগেই।	If two phones have the same code, invoice numbers will clash and sync will conflict. Save the code before the first sync.
+দুধ	Milk
+দুধের পরিমাণ ঋণাত্মক হতে পারবে না	Milk quantity cannot be negative
+দেওয়া সীমাগুলো একসাথে পূরণ করা সম্ভব নয়	The given limits cannot all be satisfied together
+দেরি (মিনিট)	Late (minutes)
+দৈনিক	Daily
+দৈনিক মজুরি	Daily wage
+দৈনিক মজুরি ০ এর বেশি হতে হবে	Daily wage must be greater than 0
+দ্বন্দ্বের ইতিহাস (এই ফোনে, সর্বশেষ ৫০)	Conflict history (on this phone, last 50)
+দ্বিতীয় বা পরের ফোনে নিজে আলাদা মালিক তৈরি করবেন না; আগে হাবের সাথে সিঙ্ক করুন, তাহলে সব ইউজার চলে আসবে।	Do not create a separate owner on a second or later phone; sync with the hub first and all users will arrive.
+ধরন	Type
+ধরন (ট্রাক/পিকআপ/ভ্যান)	Type (truck/pickup/van)
+ধরন *	Type *
+ধরন ঠিক নয়	Type is not valid
+ধাপ পাওয়া যায়নি	Step not found
+ধারণক্ষমতা (কেজি)	Capacity (kg)
+ধারণক্ষমতা ঠিক নয়	Capacity is not valid
+নগদ	Cash
+নগদ ক্যাশ	Cash in hand
+নতুন	New
+নতুন PO	New PO
+নতুন আইটেম	New item
+নতুন ইউনিট	New unit
+নতুন ইনভয়েস	New invoice
+নতুন কর্মী	New employee
+নতুন কী সংরক্ষণ করা যায়নি	The new key could not be saved
+নতুন কোড	New code
+নতুন খরচ	New expense
+নতুন গাড়ি	New vehicle
+নতুন গুদাম	New warehouse
+নতুন টেস্ট এন্ট্রি	New test entry
+নতুন ট্রায়াল	New trial
+নতুন ট্রিপ	New trip
+নতুন ডেলিভারি নোট	New delivery note
+নতুন ড্রাইভার	New driver
+নতুন পার্টি	New party
+নতুন ফর্মুলা	New formula
+নতুন ফাইল বসানো যায়নি	The new file could not be put in place
+নতুন ফিডব্যাক	New feedback
+নতুন বেতন কাঠামো যোগ করুন	Add a new salary structure
+নতুন ব্যাচ	New batch
+নতুন ভার্সন বানান	Create new version
+নতুন মেশিন	New machine
+নন্স ১২ বাইট হতে হবে	Nonce must be 12 bytes
+নম্বর	Number
+নষ্ট/স্টকে নয়	Spoiled/not in stock
+না	No
+নাম	Name
+নাম (ইংরেজি) *	Name (English) *
+নাম (বাংলা)	Name (Bengali)
+নাম *	Name *
+নাম * (যেমন কেজি)	Name * (e.g. kg)
+নাম দিন	Enter a name
+নাম লিখুন	Write a name
+নিউট্রিয়েন্ট (প্রতি ১০০ গ্রামে, ঐচ্ছিক)	Nutrients (per 100 grams, optional)
+নিউট্রিয়েন্ট ডাটা নেই (০ ধরা হয়েছে):	No nutrient data (counted as 0):
+নিউট্রিয়েন্ট লক্ষ্যমাত্রা (ঐচ্ছিক)	Nutrient targets (optional)
+নিউট্রিয়েন্ট লক্ষ্যমাত্রা ঋণাত্মক/অবৈধ হতে পারে না	Nutrient targets cannot be negative/invalid
+নিউট্রিয়েন্ট লক্ষ্যমাত্রা সঠিক নয়	Nutrient targets are not valid
+নিউট্রিয়েন্ট শতাংশ ০-১০০ এর মধ্যে হতে হবে	Nutrient percentage must be between 0-100
+নিজের তোলা খরচ নিজে অনুমোদন করা যাবে না	You cannot approve an expense you raised yourself
+নিট লাভ/(ক্ষতি)	Net profit/(loss)
+নিট ৳	Net ৳
+নিয়ন্ত্রিত	Controlled
+নিয়ন্ত্রিত আইটেম (ইস্যুতে ম্যানেজার অনুমতি)	Controlled item (manager permission to issue)
+নিয়মিত (যেমন প্রতিদিন) ব্যাকআপ নিয়ে ফাইল পেনড্রাইভ/অন্য ফোনে রাখুন; স্বয়ংক্রিয় ব্যাকআপ নেই।	Take a regular (e.g. daily) backup and keep the file on a pen drive/another phone; there is no automatic backup.
+নিরাপত্তা:	Security:
+নির্বাচিত সময়কালের নড়াচড়া দেখানো হচ্ছে; জের (opening balance) ধরা নেই।	Showing movements for the selected period; opening balance is not counted.
+নিশ্চিত	Confirmed
+নেগেটিভ স্টক (সিঙ্ক/অফলাইন বিক্রির পর)	Negative stock (after sync/offline sales)
+নেগেটিভ স্টক! গণনা/অ্যাডজাস্টমেন্ট যাচাই করুন	Negative stock! Check the count/adjustment
+নেস্টেড মান সমর্থিত নয়	Nested values are not supported
+নৈমিত্তিক ছুটি	Casual leave
+নোট	Note
+নোট (ঐচ্ছিক)	Note (optional)
+নোট id নেই	Note id missing
+নোট:	Note:
+নোটে কোনো লাইন নেই	The note has no lines
+ন্যূনতম	Minimum
+ন্যূনতম %	Minimum %
+ন্যূনতম প্রোটিন %	Minimum protein %
+ন্যূনতম ফ্যাট %	Minimum fat %
+ন্যূনতম শক্তি (kcal/kg)	Minimum energy (kcal/kg)
+পণ্য (তৈরি ফিড আইটেম) বাছাই করুন	Select a product (finished feed item)
+পদবি	Designation
+পদবি লিখুন	Enter the designation
+পয়সা	Paisa
+পয়সা (	Paisa (
+পয়সা, লাইন	paisa, line
+পয়সা/কেজি	Paisa/kg
+পয়সা]	paisa]
+পরবর্তী ব্যাচের আগে ফ্লাশ ব্যাচ (ফাঁকা/সাধারণ ফিড) চালানো হয়েছে	A flush batch (empty/regular feed) was run before the next batch
+পরিকল্পিত	Planned
+পরিকল্পিত পরিমাণ (কেজি)	Planned quantity (kg)
+পরিকল্পিত পরিমাণ (কেজি) ধনাত্মক সংখ্যায় দিন	Enter the planned quantity (kg) as a positive number
+পরিকল্পিত পরিমাণ ০ এর বেশি হতে হবে	Planned quantity must be greater than 0
+পরিচালন খরচ	Operating cost
+পরিবর্তন	Change
+পরিবহন খরচ	Transport cost
+পরিবহন খরচ (নগদ)	Transport cost (cash)
+পরিমাণ	Quantity
+পরিমাণ (কেজি)	Quantity (kg)
+পরিমাণ (কেজি) *	Quantity (kg) *
+পরিমাণ ঋণাত্মক হতে পারে না	Quantity cannot be negative
+পরিমাণ ঠিক নয়	Quantity is not valid
+পরিমাণ শূন্য হতে পারে না	Quantity cannot be zero
+পরিমাণ শূন্যের বেশি হতে হবে	Quantity must be greater than zero
+পরিমাণ সঠিক নয়	Quantity is not valid
+পরিমাণ সঠিক সংখ্যা নয়	Quantity is not a valid number
+পরিমাণ ০ এর বেশি হতে হবে	Quantity must be greater than 0
+পরিশোধ	Payment
+পরিশোধিত	Paid
+পরিশোধের অঙ্ক ০ এর বেশি হতে হবে	Payment amount must be greater than 0
+পাঠানো	Sent
+পার্টি	Party
+পার্টি (সাপ্লায়ার/কাস্টমার/ডিলার)	Party (supplier/customer/dealer)
+পার্টি পাওয়া যায়নি	Party not found
+পার্টি মুছবেন?	Delete party?
+পার্টি লেজার	Party ledger
+পার্টি সম্পাদনা	Edit party
+পাস	Pass
+পাস করুন	Pass it
+পাস: সব টেস্ট পাস হলে সরাসরি; ব্যর্থ/টেস্টহীন হলে শুধু ম্যানেজার, কারণসহ। হোল্ড ও বাতিলে কারণ বাধ্যতামূলক।	Pass: directly if all tests pass; if failed/untested only a manager, with a reason. A reason is mandatory for hold and rejection.
+পাসফ্রেজ (কমপক্ষে ৮ অক্ষর)	Passphrase (at least 8 characters)
+পাসফ্রেজ আবার (শুধু ব্যাকআপের সময়)	Passphrase again (only when backing up)
+পাসফ্রেজ কমপক্ষে	Passphrase must be at least
+পাসফ্রেজ ভুল, অথবা ফাইলটি নষ্ট/বদলানো	Wrong passphrase, or the file is corrupted/altered
+পিস-কাজ	Piece-work
+পিস-কাজ যোগ হলে সেই মাসের বেতন রান আবার হিসাব করুন। অনুমোদিত মাসে কিছু বদলানো যায় না।	After adding piece-work, recalculate that month's payroll run. Nothing can be changed in an approved month.
+পিস-রেট	Piece rate
+পিস-রেট কর্মীর মজুরি আসে বোনাস/জরিমানা পর্দার 'পিস-কাজ' থেকে।	A piece-rate employee's wage comes from 'Piece-work' on the Bonus/Fine screen.
+পুঞ্জীভূত অবচয়	Accumulated depreciation
+পুরো মাল পৌঁছালে ঘর ফাঁকা রাখুন; কম হলে কেজি লিখুন।	Leave blank if the full goods arrived; write kg if fewer.
+পুরো মাল পৌঁছালে নিচের ঘর ফাঁকা রাখুন; কম পৌঁছালে কেজি লিখুন (বাকিটা স্টকে ফিরবে)।	Leave the box below blank if the full goods arrived; write kg if fewer arrived (the rest returns to stock).
+পে-স্লিপ	Pay slip
+পেমেন্ট করুন	Make payment
+পেমেন্ট দেওয়ার অনুমতি নেই (ম্যানেজার/মালিক)	No permission to make payments (manager/owner)
+পেমেন্ট পদ্ধতি সঠিক নয়	Payment method is not valid
+পেমেন্ট মাধ্যম	Payment method
+পেমেন্ট মাধ্যম সঠিক নয়	Payment method is not valid
+পেমেন্ট সংরক্ষিত হয়েছে	Payment saved
+পেমেন্টের অঙ্ক ০ এর বেশি হতে হবে	Payment amount must be greater than 0
+পেয়ার করা হাব	Paired hub
+পেয়ারিং কোড	Pairing code
+পেয়ারিং কোড (হাবে দেখানো)	Pairing code (shown on the hub)
+পেয়ারিং কোড ভুল	Wrong pairing code
+পেয়ারিং কোড ভুল বা হাবে কোড বদলানো হয়েছে; আবার পেয়ার করুন	Wrong pairing code, or the code on the hub was changed; pair again
+পেয়ারিং কোড ১০ অক্ষরের (যেমন ABCDE-FGHJK)	Pairing code is 10 characters (e.g. ABCDE-FGHJK)
+পেয়ারিং কোড ১০ অক্ষরের হতে হবে	Pairing code must be 10 characters
+পেয়ারিং সরান	Remove pairing
+পেলেট মিল	Pellet mill
+পৌঁছেছে	Arrived
+প্যাকিং	Packing
+প্যাকেজিং	Packaging
+প্যাকেজিং খরচ	Packaging cost
+প্যাকেজিং খরচ (৳)	Packaging cost (৳)
+প্যারামিটার	Parameter
+প্যারামিটারের নাম	Parameter name
+প্যারামিটারের নাম দিন	Enter the parameter name
+প্রজাতি (ব্রয়লার/লেয়ার/গরু...)	Species (broiler/layer/cattle...)
+প্রজাতি লিখুন (যেমন ব্রয়লার)	Enter the species (e.g. broiler)
+প্রতি ~১৫ মিনিটে ব্যাকগ্রাউন্ডে সিঙ্ক (Wi-Fi-তে)	Background sync about every 15 minutes (on Wi-Fi)
+প্রতি এককের রেট (টাকা)	Rate per unit (taka)
+প্রতি কত ঘণ্টা পরপর	Repeat every how many hours
+প্রতি কত দিন পরপর	Repeat every how many days
+প্রতি কেজি বৃদ্ধির খাদ্য-খরচ ৳	Feed cost per kg of gain ৳
+প্রতিটি লাইনে আইটেম বাছাই করুন	Select an item on every line
+প্রতিটি লাইনে গ্রাম/টন পরিমাণ ধনাত্মক সংখ্যায় দিন	On every line give the gram/ton quantity as a positive number
+প্রতিটি লাইনের পরিমাণ ০ এর বেশি হতে হবে	The quantity of every line must be greater than 0
+প্রত্যাখ্যাত	Rejected
+প্রত্যাখ্যান	Reject
+প্রত্যাখ্যান:	Rejected:
+প্রত্যাখ্যানের কারণ লিখুন	Write the reason for rejection
+প্রত্যাশিত ডেলিভারি	Expected delivery
+প্রত্যাশিত তারিখ অর্ডারের আগে হতে পারে না	Expected date cannot be before the order date
+প্রথম সিঙ্কে সব ডাটা নামে, কিছুক্ষণ লাগতে পারে। কোড ভুল হলে কিছুই সংরক্ষিত হয় না।	The first sync downloads all data and may take a while. If the code is wrong nothing is saved.
+প্রথমবার চালু: মালিকের অ্যাকাউন্ট তৈরি করুন	First run: create the owner account
+প্রদান	Payment
+প্রবেশ	Enter
+প্রশিক্ষক	Trainer
+প্রশিক্ষণ	Training
+প্রস্তাবিত	Proposed
+প্রাণীর ধরন (যেমন ব্রয়লার)	Animal type (e.g. broiler)
+প্রাণীর সংখ্যা	Number of animals
+প্রাণীর সংখ্যা ঠিক নয়	Number of animals is not valid
+প্রাণীর সংখ্যা ০ এর বেশি হতে হবে	Number of animals must be greater than 0
+প্রাপক (ঐচ্ছিক)	Recipient (optional)
+প্রাপক:	Recipient:
+প্রাপ্য ছুটি দেখুন	View leave balances
+প্রিভেন্টিভ	Preventive
+প্রিমিক্স	Premix
+প্রোটিন	Protein
+প্রোটিন %	Protein %
+প্রোটিন (%)	Protein (%)
+প্রোটিন সর্বনিম্ন	Protein minimum
+প্রোডাকশন	Production
+প্রোডাকশন ওভারহেড	Production overhead
+প্রোডাকশন ব্যাচ	Production batch
+প্রোডাকশন লেবার	Production labour
+প্ল্যান করা	Planned
+প্ল্যান করা (লোড বাকি)	Planned (load pending)
+ফর্মুলা	Formula
+ফর্মুলা ও প্রোডাকশন	Formulation & Production
+ফর্মুলা কোড দিন	Enter the formula code
+ফর্মুলা ট্রায়াল	Formula trial
+ফর্মুলা পাওয়া যায়নি	Formula not found
+ফর্মুলা সংস্করণ	Formula version
+ফর্মুলায় কোনো উপাদান নেই	The formula has no ingredients
+ফর্মুলার কোড দিন	Enter the formula code
+ফর্মুলার নাম	Formula name
+ফর্মুলার নাম দিন	Enter the formula name
+ফলাফল ও খরচ	Results & cost
+ফসফরাস	Phosphorus
+ফাইবার	Fibre
+ফাইবার %	Fibre %
+ফাইবার (%)	Fibre (%)
+ফাইবার সর্বোচ্চ	Fibre maximum
+ফিড ERP	Feed ERP
+ফিডব্যাক পাওয়া যায়নি	Feedback not found
+ফিনিশড গুডস	Finished goods
+ফিনিশড গুডস গুদাম	Finished goods warehouse
+ফিনিশড গুডস মজুদ	Finished goods stock
+ফিরে যান	Go back
+ফেরত	Return
+ফেরত (ইন)	Return (in)
+ফেরত (কেজি)	Return (kg)
+ফেরত (ক্রেডিট)	Return (credit)
+ফেরত আছে এমন ইনভয়েস বাতিল করা যায় না	An invoice with returns cannot be cancelled
+ফেরত নিন	Take return
+ফেরত নিশ্চিত করুন	Confirm return
+ফেরত পরিমাণ ফেরতযোগ্য (	Return quantity exceeds returnable (
+ফেরত বিক্রীত পরিমাণের বেশি হতে পারে না	Return cannot exceed the quantity sold
+ফেরত মাল ভালো অবস্থায় না থাকলে 'স্টকে ফেরত' বন্ধ রাখুন — তখন মাল স্টকে ঢুকবে না, শুধু ক্রেতার ক্রেডিট হবে।	If returned goods are not in good condition, turn off 'Return to stock' — the goods will not enter stock; only the customer gets a credit.
+ফেরত মাল স্টকে,	Returned goods to stock,
+ফেরতের কারণ লিখুন	Write the reason for the return
+ফেরতের ক্রেডিট ০ হচ্ছে	Return credit is 0
+ফেরতের পরিমাণ শূন্যের বেশি হতে হবে	Return quantity must be greater than zero
+ফোন	Phone
+ফোন (ঐচ্ছিক)	Phone (optional)
+ফোন নম্বর সঠিক নয়	Phone number is not valid
+ফোনের মতো	Like phone
+ফ্যাট	Fat
+ফ্যাট %	Fat %
+ফ্যাট (%)	Fat (%)
+ফ্যাট সর্বনিম্ন	Fat minimum
+ফ্যাট সর্বোচ্চ	Fat maximum
+ফ্যাটের সর্বনিম্ন সর্বোচ্চের বেশি	Fat minimum is greater than maximum
+ফ্যাটের সর্বনিম্ন সর্বোচ্চের বেশি হতে পারে না	Fat minimum cannot be greater than maximum
+বকেয়া	Outstanding
+বছর ঠিক নয়	Year is not valid
+বদলান	Change
+বন্ধ	Closed
+বন্ধ করুন	Close
+বয়লার	Boiler
+বয়স (দিন)	Age (days)
+বয়স (দিন) ০ এর বেশি হতে হবে	Age (days) must be greater than 0
+বরখাস্ত	Dismissed
+বর্তমান ফাইল সরানো যায়নি	The current file could not be moved
+বর্তমান বাকি: ৳	Current due: ৳
+বর্তমান স্টক:	Current stock:
+বর্তমান স্ট্যাটাস	Current status
+বসানো যায়নি (	could not be placed (
+বস্তা (২৫ কেজি)	Sack (25 kg)
+বস্তা (৫০ কেজি)	Sack (50 kg)
+বস্তা ঋণাত্মক হতে পারে না	Sacks cannot be negative
+বস্তা)	sacks)
+বস্তার সাইজ (কেজি; লুজ হলে ০)	Sack size (kg; 0 if loose)
+বস্তার সাইজ ঋণাত্মক হতে পারে না	Sack size cannot be negative
+বস্তার সাইজ শূন্যের বেশি হতে হবে	Sack size must be greater than zero
+বস্তার সাইজ সংখ্যায় দিন (লুজ হলে ০)	Enter the sack size as a number (0 if loose)
+বা মেয়াদোত্তীর্ণ)	or expired)
+বাকি	Due
+বাকি (আমরা দেব):	Due (we owe):
+বাকি আদায়	Receivables
+বাকি দেনা (সাপ্লায়ার)	Payables (suppliers)
+বাকি পাওনা (কাস্টমার/ডিলার)	Receivables (customers/dealers)
+বাকি পাওনা/দেনার লাইনে পার্টি দিতে হবে (	A party must be given on receivable/payable lines (
+বাকি/পাওনা থাকা পার্টি মোছা যাবে না	A party with receivable/payable balance cannot be deleted
+বাকির বয়স	Receivable aging
+বাকির বয়স (ক্রেতা)	Receivable aging (customers)
+বাড়ান	Increase
+বাতিল	Cancelled
+বাতিল (রিজেক্ট)	Cancelled (rejected)
+বাতিল ইনভয়েসে আদায় হয় না	No collection on a cancelled invoice
+বাতিল করুন	Cancel
+বাতিল ট্রিপে খরচ হয় না	No expense on a cancelled trip
+বাতিল:	Cancelled:
+বাতিলের কারণ (আবশ্যক)	Reason for cancellation (required)
+বাতিলের কারণ *	Reason for cancellation *
+বাতিলের কারণ লিখতে হবে	A reason for cancellation must be written
+বাতিলের কারণ লিখুন	Write the reason for cancellation
+বাতিলের কারণ:	Reason for cancellation:
+বাদ:	Excluded:
+বারকোড/QR ক্যামেরার সামনে ধরুন	Hold the barcode/QR in front of the camera
+বার্তা	Message
+বার্তা অসম্পূর্ণ	Message is incomplete
+বার্তা পড়া যায়নি — পেয়ারিং কোড ভুল অথবা বার্তা বদলে গেছে	Message could not be read — wrong pairing code or the message was altered
+বার্ষিক দিন ০–৩৬৬ হতে হবে	Annual days must be 0–366
+বালি/সিলিকা	Sand/silica
+বাসা ভাড়া	House rent
+বিক্রয়	Sales
+বিক্রয় (আউট)	Sales (out)
+বিক্রয় আয়	Sales revenue
+বিক্রয় ইনভয়েস	Sales invoice
+বিক্রয় ফেরত	Sales return
+বিক্রীত পণ্যের খরচ	Cost of goods sold
+বিক্রীত পণ্যের খরচ, চালান	Cost of goods sold, challan
+বিদ্যুৎ/ওভারহেড (৳)	Electricity/overhead (৳)
+বিনা বেতনে ছুটি	Unpaid leave
+বিবরণ	Description
+বিবরণ লিখুন	Write a description
+বিভাগ	Department
+বিভাগ লিখুন	Enter the department
+বিভাগ/কাজ	Department/work
+বেতন	Salary
+বেতন কাঠামো	Salary structure
+বেতন কাঠামো (টাকায়)	Salary structure (in taka)
+বেতন কাঠামো নেই (বাদ গেছে):	No salary structure (skipped):
+বেতন খরচ	Salary expense
+বেতন পরিশোধ	Salary payment
+বেতন পরিশোধ করুন	Pay salary
+বেতন পরিশোধের মাধ্যম ঠিক নয়	Salary payment method is not valid
+বেতন পাওয়ার মাধ্যম	Salary payment method
+বেতন বাকি	Salary payable
+বেতন মাস	Salary month
+বেতন রান পাওয়া যায়নি	Payroll run not found
+বেস	Base
+বেস ফর্মুলা (অনুমোদিত)	Base formula (approved)
+বেস ফর্মুলা পাওয়া যায়নি	Base formula not found
+বেস ফর্মুলা বাছাই করুন	Select a base formula
+বেস হিসেবে শুধু অনুমোদিত ফর্মুলা নেওয়া যায়	Only an approved formula can be used as a base
+বোনাস	Bonus
+বোনাস / জরিমানা / পিস-কাজ	Bonus / Fine / Piece-work
+বোনাস/জরিমানা	Bonus/Fine
+বোনাসের নাম	Bonus name
+বোনাসের নাম লিখুন	Enter the bonus name
+ব্যবধান সংখ্যায় দিন	Enter the interval as a number
+ব্যবস্থা:	Action:
+ব্যবহারযোগ্য নয় (QC:	Not usable (QC:
+ব্যবহৃত উপাদান (ট্রেসেবিলিটি)	Ingredients used (traceability)
+ব্যর্থ	Failed
+ব্যর্থ টেস্ট আছে; পাস করতে ম্যানেজারের অনুমতি লাগে	There is a failed test; passing needs manager permission
+ব্যর্থ:	Failed:
+ব্যর্থতার কারণ লিখুন	Write the reason for failure
+ব্যাংক	Bank
+ব্যাংক/মোবাইল ব্যাংকিং অ্যাকাউন্ট নম্বর দিন	Enter the bank/mobile banking account number
+ব্যাকআপ ও রিস্টোর	Backup & Restore
+ব্যাকআপ নিন	Take backup
+ব্যাকআপ ফাইল থেকে রিস্টোর	Restore from backup file
+ব্যাকআপ ফাইল পাসফ্রেজ দিয়ে এনক্রিপ্ট হয়। পাসফ্রেজ হারালে ব্যাকআপ আর খোলা যাবে না — কেউ উদ্ধার করতে পারবে না।	The backup file is encrypted with a passphrase. If you lose the passphrase the backup can never be opened — nobody can recover it.
+ব্যাকআপ ফাইলের গঠন ঠিক নয়	Backup file structure is not valid
+ব্যাকআপ ব্যর্থ	Backup failed
+ব্যাকআপ ভিন্ন ভার্সনের (ব্যাকআপ	Backup is of a different version (backup
+ব্যাকআপ সম্পন্ন (	Backup completed (
+ব্যাচ	Batch
+ব্যাচ id নেই	Batch id missing
+ব্যাচ তৈরি করুন	Create batch
+ব্যাচ নম্বর	Batch number
+ব্যাচ নম্বর *	Batch number *
+ব্যাচ নম্বর খালি হতে পারে না	Batch number cannot be empty
+ব্যাচ নম্বর দিন	Enter the batch number
+ব্যাচ নম্বর লিখুন	Write the batch number
+ব্যাচ পাওয়া যায়নি	Batch not found
+ব্যাচ বাতিল	Batch cancelled
+ব্যাচ শুরু (কাঁচামাল স্টক থেকে কাটা হবে)	Start batch (raw materials will be deducted from stock)
+ব্যাচ সম্পূর্ণ	Batch complete
+ব্যাচ সম্পূর্ণ করুন	Complete batch
+ব্যালেন্স: + = আমরা পাব, − = আমরা দেব	Balance: + = we receive, − = we owe
+ব্রেকডাউন	Breakdown
+ব্রেকডাউনে মূল কারণ লিখুন	Write the root cause for the breakdown
+ভয়েড	Void
+ভয়েড (রিভার্স)	Void (reverse)
+ভাউচার পাওয়া যায়নি	Voucher not found
+ভাউচারে অন্তত দুটি লাইন লাগবে	A voucher needs at least two lines
+ভাড়া গাড়ি	Hired vehicle
+ভাড়া গাড়ির বিল	Hired vehicle bill
+ভালো আউটপুট (কেজি)	Good output (kg)
+ভিত্তি	Basis
+মজুরি	Wages
+মজুরি (৳)	Wages (৳)
+মাঠ ফিডব্যাক	Field feedback
+মাধ্যম	Method
+মাধ্যম *	Method *
+মাধ্যম ঠিক নয়	Method is not valid
+মান	Value
+মান নিয়ন্ত্রণ	Quality Control
+মাল রিসিভ	Receive goods
+মাল রিসিভ (PO	Receive goods (PO
+মাল লোড করুন	Load goods
+মালিকানা ঠিক নয়	Ownership is not valid
+মালিকের নাম	Owner's name
+মাস	Month
+মাস ঠিক নয়	Month is not valid
+মাসিক	Monthly
+মাসিক কিস্তি (টাকা)	Monthly installment (taka)
+মাসিক কিস্তি ০ এর বেশি এবং মূল অঙ্কের বেশি নয়	Monthly installment must be more than 0 and not more than the principal
+মাসিক বেতনে মূল বেতন ০ এর বেশি হতে হবে	For monthly salary the basic salary must be greater than 0
+মাসের দিন সংখ্যা ঠিক নয়	Days in the month are not valid
+মাস্টার ডাটা	Master Data
+মি,	m,
+মি.	m.
+মিক্সার	Mixer
+মিক্সার খালি করে সম্পূর্ণ পরিষ্কার করা হয়েছে	The mixer was emptied and fully cleaned
+মিনিট ঋণাত্মক হতে পারে না	Minutes cannot be negative
+মিনিমাম স্টক	Minimum stock
+মিনিমাম স্টক (কেজি)	Minimum stock (kg)
+মিনিমাম স্টক ঋণাত্মক হতে পারে না	Minimum stock cannot be negative
+মিনিমাম স্টক:	Minimum stock:
+মিনিমাম স্টকের নিচে	Below minimum stock
+মিনিমাম স্টকের নিচে (সর্বনিম্ন	Below minimum stock (minimum
+মিলছে না ✖ — ডেবিট ও ক্রেডিটে গরমিল, হিসাবরক্ষককে জানান	Does not balance ✖ — debit and credit differ, inform the accountant
+মিলেছে ✔	Balanced ✔
+মুছুন	Delete
+মুভমেন্ট:	Movement:
+মূল কারণ	Root cause
+মূল তথ্য	Main information
+মূল বেতন	Basic salary
+মূল লট পাওয়া যায়নি; 'স্টকে ফেরত' ছাড়া ফেরত নিন	Original lot not found; take the return without 'Return to stock'
+মূল ৳	Principal ৳
+মূলধন	Capital
+মৃত্যু (ঐচ্ছিক)	Mortality (optional)
+মৃত্যু সংখ্যা ঠিক নয়	Mortality count is not valid
+মৃত্যুর সংখ্যা ঋণাত্মক হতে পারবে না	Mortality count cannot be negative
+মৃত্যুর সংখ্যা মোট প্রাণীর চেয়ে বেশি হতে পারবে না	Mortality count cannot exceed the total animals
+মেয়াদ	Expiry
+মেয়াদ (ঐচ্ছিক)	Expiry (optional)
+মেয়াদ *	Expiry *
+মেয়াদ উৎপাদনের তারিখের আগে হতে পারে না	Expiry cannot be before the production date
+মেয়াদ ট্র্যাক করতে লট ট্র্যাক চালু করতে হবে	To track expiry, lot tracking must be on
+মেয়াদ ট্র্যাক করুন	Track expiry
+মেয়াদ ট্র্যাক নেই	Expiry not tracked
+মেয়াদ নেই	No expiry
+মেয়াদ শেষ / শেষের পথে	Expired / nearing expiry
+মেয়াদ শেষ হচ্ছে (৩০ দিনের মধ্যে)	Expiring (within 30 days)
+মেয়াদ:	Expiry:
+মেয়াদোত্তীর্ণ (	Expired (
+মেয়াদোত্তীর্ণ:	Expired:
+মেরামত চলছে	Under repair
+মেশিন	Machine
+মেশিন অবসর দিন	Retire machine
+মেশিন ও যন্ত্রপাতি	Machinery & equipment
+মেশিন পাওয়া যায়নি	Machine not found
+মেশিন পাওয়া যায়নি বা অবসরপ্রাপ্ত	Machine not found or retired
+মেশিন বাছাই করুন	Select a machine
+মেশিন রান	Machine run
+মেশিন রান ঘণ্টা/খরচ ঋণাত্মক হতে পারে না	Machine run hours/cost cannot be negative
+মেশিন সম্পাদনা	Edit machine
+মেশিনের কোড দিন	Enter the machine code
+মেশিনের নাম (যেমন মিক্সার-১)	Machine name (e.g. Mixer-1)
+মেশিনের নাম দিন	Enter the machine name
+মোছা হবে।	will be deleted.
+মোট	Total
+মোট (Gross)	Total (Gross)
+মোট আয়	Total income
+মোট কর্তন	Total deductions
+মোট ক্রেডিট	Total credit
+মোট খরচ	Total expense
+মোট খাদ্য গ্রহণ (কেজি)	Total feed intake (kg)
+মোট ডিম (ঐচ্ছিক)	Total eggs (optional)
+মোট ডেবিট	Total debit
+মোট দুধ লিটার (ঐচ্ছিক)	Total milk litres (optional)
+মোট নিট	Total net
+মোট পরিমাণ	Total quantity
+মোট বেতন খরচ ০; অনুমোদন করার কিছু নেই	Total salary expense is 0; nothing to approve
+মোট বেতন ০ এর বেশি হতে হবে	Gross salary must be greater than 0
+মোট মাল	Total goods
+মোট লাভ (Gross)	Gross profit
+মোট:	Total:
+মোবাইল ব্যাংকিং	Mobile banking
+ম্যানেজারের অনুমোদন লাগবে:	Manager approval needed:
+যন্ত্রাংশ খরচ	Spare parts cost
+যন্ত্রাংশ খরচ (৳)	Spare parts cost (৳)
+যন্ত্রাংশের অপেক্ষা	Waiting for spare parts
+যন্ত্রাংশের অপেক্ষায়	Awaiting spare parts
+যাতায়াত	Travel
+যাত্রা শুরু	Start journey
+যুক্ত হচ্ছে…	Connecting…
+যুক্ত হয়ে সিঙ্ক করুন	Connect and sync
+যে নোটের ডেলিভারি হয়নি, তার মাল স্টকে ফিরে যাবে।	Goods of notes not delivered will return to stock.
+যোগ	Add
+যোগ করুন	Add
+যোগদানের তারিখ	Joining date
+যোগদানের তারিখ দিন	Enter the joining date
+রক্ষণাবেক্ষণ	Maintenance
+রক্ষণাবেক্ষণ খরচ	Maintenance cost
+রানে কোনো স্লিপ নেই	The run has no slips
+রানের শেষ সময় শুরুর পরে হতে হবে	Run end time must be after the start
+রাস্তায়	On the road
+রিডিং আগের রিডিং (	Reading is less than the previous reading (
+রিডিং ঋণাত্মক বা অবৈধ হতে পারে না	Reading cannot be negative or invalid
+রিভার্সাল ভাউচার আবার রিভার্স করা যায় না	A reversal voucher cannot be reversed again
+রিভার্সাল সারি আবার রিভার্স করা যায় না	A reversal row cannot be reversed again
+রিভার্সাল:	Reversal:
+রিভার্সালের কারণ লিখতে হবে	A reason for reversal must be written
+রিভার্সালের কারণ লিখুন	Write the reason for reversal
+রিসিভ	Receive
+রিসিভ তালিকা	Receipt list
+রিসিভ সংরক্ষণ করুন	Save receipt
+রিসিভটি এই সাপ্লায়ারের নয়	This receipt is not from this supplier
+রিসিভের আইটেম	Receipt item
+রিসিভের তারিখ *	Receipt date *
+রিস্টোর	Restore
+রিস্টোর করলে এই ফোনের বর্তমান সব ডাটা ব্যাকআপের অবস্থা দিয়ে বদলে যাবে (আগেরটা ফোনে 'pre-restore' নামে থেকে যায়)।	Restoring replaces all current data on this phone with the backup's state (the previous data stays on the phone as 'pre-restore').
+রিস্টোর ব্যর্থ	Restore failed
+রিস্টোর ব্যর্থ (	Restore failed (
+রিস্টোর সম্পন্ন	Restore completed
+রুট	Route
+রুট / এলাকা	Route / area
+রুট/এলাকার নাম লিখুন	Enter the route/area name
+রেকর্ড পাওয়া যায়নি	Record not found
+রেট ০ এর বেশি হতে হবে	Rate must be greater than 0
+রেফারেন্স ওজন ০ এর বেশি হতে হবে	Reference weight must be greater than 0
+রো-তে id নেই	Row has no id
+লক্ষ্যমাত্রা পূরণ হয়নি:	Target not met:
+লগআউট	Sign out
+লগইন করা নেই	Not signed in
+লগইন করুন	Sign in
+লট	Lot
+লট *	Lot *
+লট / ব্যাচ নম্বর	Lot / batch number
+লট QC	Lot QC
+লট id নেই	Lot id missing
+লট ও মেয়াদ	Lots & Expiry
+লট ট্র্যাক করুন	Track lots
+লট পাওয়া যায়নি	Lot not found
+লট বাছাই করুন	Select a lot
+লটটি এই আইটেমের নয়	This lot does not belong to this item
+লবণ	Salt
+লাইট	Light
+লাইন	Line
+লাইন মুছুন	Delete line
+লাইন-ক্লিনিং চেকলিস্ট (নতুন ব্যাচের আগে বাধ্যতামূলক)	Line-cleaning checklist (mandatory before a new batch)
+লাইন-ক্লিনিং সম্পন্ন ✔	Line cleaning complete ✔
+লাইনে বসান	Put on line
+লাইনের পরিমাণ সঠিক নয়	Line quantity is not valid
+লাইসেন্স নম্বর	Licence number
+লাভ-ক্ষতি	Profit & Loss
+লি.)	L.)
+লিটার (ঐচ্ছিক)	Litres (optional)
+লিটার ঠিক নয়	Litres are not valid
+লিটার সংখ্যায় দিন	Enter litres as a number
+লিটার/প্রাণী/দিন	Litres/animal/day
+লেবার	Labour
+লেবার খরচ	Labour cost
+লেবার খরচ (৳)	Labour cost (৳)
+লেবার/ওভারহেড ঋণাত্মক হতে পারে না	Labour/overhead cannot be negative
+লোড করলে FEFO অনুযায়ী QC-পাস লট থেকে স্টক কমবে। একবারই করা যায়।	On loading, stock is deducted from QC-passed lots per FEFO. Can be done only once.
+লোড করলে প্রতিটি নোটের মাল FEFO অনুযায়ী QC-পাস লট থেকে স্টক থেকে কমবে।	On loading, the goods of every note are deducted from QC-passed lots per FEFO.
+লোড ব্যর্থ	Load failed
+লোড হয়েছে	Loaded
+লোড হয়েছে, পথে	Loaded, on the way
+শক্তি	Energy
+শক্তি (kcal/kg)	Energy (kcal/kg)
+শক্তি (kcal/kg) ঋণাত্মক হতে পারে না	Energy (kcal/kg) cannot be negative
+শক্তি সর্বনিম্ন	Energy minimum
+শিডিউল:	Schedule:
+শিডিউলের নাম দিন	Enter the schedule name
+শিরোনাম	Title
+শিরোনাম লিখুন	Write a title
+শুধু 'চলমান' কাজ সম্পন্ন করা যায়	Only a 'running' job can be completed
+শুধু অক্ষর, সংখ্যা, _ ও . চলবে	Only letters, digits, _ and . are allowed
+শুধু অনুমোদিত খরচ বাতিল করা যায়	Only an approved expense can be cancelled
+শুধু অনুমোদিত ফর্মুলা দিয়ে ব্যাচ বানানো যায়	A batch can only be made from an approved formula
+শুধু অনুমোদিত রান পরিশোধ করা যায়	Only an approved run can be paid
+শুধু অপেক্ষমাণ খরচ অনুমোদন করা যায়	Only a pending expense can be approved
+শুধু অপেক্ষমাণ খরচ বাতিল করা যায়	Only a pending expense can be cancelled
+শুধু অপেক্ষমান আবেদন বাতিল করা যায়	Only a pending request can be cancelled
+শুধু অপেক্ষমান আবেদনে সিদ্ধান্ত হয়	Only a pending request can be decided
+শুধু খসড়া PO অনুমোদন করা যায়	Only a draft PO can be approved
+শুধু খসড়া PO সম্পাদনা করা যায়	Only a draft PO can be edited
+শুধু খসড়া রান অনুমোদন করা যায়	Only a draft run can be approved
+শুধু চলমান ট্রায়াল জমা দেওয়া যায়	Only a running trial can be submitted
+শুধু চলমান ট্রায়ালে ফল যোগ করা যায়	Results can only be added to a running trial
+শুধু চলমান ব্যাচ সম্পূর্ণ করা যায়	Only a running batch can be completed
+শুধু পরিকল্পিত ব্যাচ শুরু করা যায়	Only a planned batch can be started
+শুধু সংখ্যার পাসফ্রেজ দুর্বল; অক্ষর মেশান	A passphrase of only digits is weak; mix in letters
+শুরু	Start
+শুরু হয়ে যাওয়া ব্যাচ বাতিল করা যায় না	A batch that has started cannot be cancelled
+শুরুর ওজন	Starting weight
+শুরুর ওজন (গ্রাম/প্রাণী)	Starting weight (gram/animal)
+শুরুর ওজন ঋণাত্মক বা অবৈধ হতে পারবে না	Starting weight cannot be negative or invalid
+শুরুর কিমি	Starting km
+শুরুর কিমি (ঐচ্ছিক)	Starting km (optional)
+শুরুর কিমি ঠিক নয়	Starting km is not valid
+শুরুর জের ৳	Opening balance ৳
+শুরুর তারিখ দিন	Enter the start date
+শুরুর তারিখ শেষের তারিখের পরে হতে পারে না	Start date cannot be after the end date
+শূন্য অঙ্কের লাইন গ্রহণযোগ্য নয়	A line with a zero amount is not acceptable
+শেলফ-লাইফ (দিন)	Shelf life (days)
+শেলফ-লাইফ (দিন) পূর্ণসংখ্যায় দিন	Enter shelf life (days) as a whole number
+শেলফ-লাইফ কমপক্ষে ১ দিন হতে হবে	Shelf life must be at least 1 day
+শেষ	End
+শেষ ওজন	Final weight
+শেষ ওজন (গ্রাম/প্রাণী)	Final weight (gram/animal)
+শেষ ওজন ঋণাত্মক বা অবৈধ হতে পারবে না	Final weight cannot be negative or invalid
+শেষ কর্মদিবস	Last working day
+শেষ ব্যাকআপ	Last backup
+শেষ ৭ দিন:	Last 7 days:
+শেষে অ্যাপ বন্ধ করে আবার খুলতে হবে।	At the end, close the app and reopen it.
+শেষের কিমি	Ending km
+শেষের কিমি (ঐচ্ছিক)	Ending km (optional)
+শেষের কিমি শুরুর কিমির কম হতে পারে না	Ending km cannot be less than the starting km
+শোধ	Repay
+সংখ্যা পড়া যায়নি:	The number could not be read:
+সংখ্যায় দিন	Enter as a number
+সংরক্ষণ	Save
+সংরক্ষণ ও অনুমোদন	Save & approve
+সংরক্ষণ করুন	Save
+সংরক্ষণ নির্দেশনা	Storage instructions
+সংরক্ষণের পর লেজারে নগদ থেকে খরচ হিসেবে যাবে এবং এই এন্ট্রি আর বদলানো/রিভার্স করা যাবে না।	After saving, it goes to the ledger as a cash expense and this entry can no longer be changed/reversed.
+সংস্করণ মেলেনি	Version mismatch
+সক্রিয়	Active
+সক্রিয় উপাদান	Active ingredient
+সক্রিয় উপাদান (Active Ingredient) *	Active ingredient *
+সক্রিয় কর্মীকেই অগ্রিম দেওয়া যায়	An advance can be given only to an active employee
+সক্রিয় কর্মীর ছুটি নেওয়া যায়	Leave can be taken only by an active employee
+সঠিক সংখ্যা নয়	Not a valid number
+সনদ —	Certificate —
+সনদের মেয়াদ (ঐচ্ছিক)	Certificate expiry (optional)
+সব	All
+সব অঙ্ক একই হলে চলবে না (যেমন 1111)	All digits cannot be the same (e.g. 1111)
+সব কর্মীর নিট বেতন পরিশোধ হিসেবে লেজারে পোস্ট হবে। নিশ্চিত?	The net salary of all employees will be posted to the ledger as paid. Sure?
+সব গুদাম	All warehouses
+সব প্যারামিটার পাস ✔	All parameters passed ✔
+সব লট দেখান (শুধু অপেক্ষমাণ/হোল্ড নয়)	Show all lots (not only pending/hold)
+সব সময়	All time
+সবার জন্য	For everyone
+সবার:	Everyone's:
+সময়	Time
+সময়কাল	Period
+সময়কাল yyyy-MM ফরম্যাটে হতে হবে	Period must be in yyyy-MM format
+সমষ্টিগত ফল	Aggregate result
+সমস্যা (বৃদ্ধি কম / ডায়রিয়া...)	Problem (low growth / diarrhoea...)
+সমস্যা (সংক্ষেপে)	Problem (brief)
+সমস্যা জানান (ব্রেকডাউন)	Report a problem (breakdown)
+সমস্যাটি অসীম (সীমাহীন) — উপাদানের সীমা যাচাই করুন	The problem is unbounded — check the ingredient limits
+সমস্যার ধরন লিখুন	Write the type of problem
+সমস্যার সংক্ষিপ্ত বিবরণ লিখুন	Write a short description of the problem
+সমাধান	Solution
+সমাধান হয়েছে	Resolved
+সমাধান:	Resolution:
+সম্পন্ন	Completed
+সম্পন্ন (বন্ধ বাকি)	Completed (closure pending)
+সম্পন্ন/বন্ধ করতে নির্ধারিত বোতাম ব্যবহার করুন	Use the designated button to complete/close
+সম্পাদনা	Edit
+সম্পূর্ণ	Complete
+সম্পূর্ণ করলে তৈরি ফিড স্টকে ঢুকবে (QC পাস না হওয়া পর্যন্ত বিক্রি বন্ধ) এবং হিসাবে এন্ট্রি হবে।	On completion the finished feed enters stock (sale blocked until QC passes) and the accounting entry is made.
+সম্পূর্ণ করুন	Complete
+সম্পূর্ণ রিসিভ	Full receipt
+সরাসরি খরচ (COGS ইত্যাদি)	Direct costs (COGS etc.)
+সর্বনিম্ন % ঠিক নয়	Minimum % is not valid
+সর্বনিম্ন খরচের মিশ্রণ	Minimum-cost mix
+সর্বনিম্ন খরচের মিশ্রণ পাওয়া গেছে	A minimum-cost mix was found
+সর্বনিম্ন খরচের মিশ্রণ বের করুন	Find the minimum-cost mix
+সর্বনিম্ন ডোজ	Minimum dose
+সর্বনিম্ন ডোজ (গ্রাম/টন ফিড)	Minimum dose (gram/ton feed)
+সর্বনিম্ন ডোজ সর্বোচ্চ ডোজের বেশি হতে পারে না	Minimum dose cannot be more than the maximum dose
+সর্বনিম্ন সীমা	Minimum limit
+সর্বনিম্ন সীমা সঠিক সংখ্যা নয়	Minimum limit is not a valid number
+সর্বনিম্ন সীমা সর্বোচ্চের চেয়ে বড় হতে পারে না	Minimum limit cannot be larger than the maximum
+সর্বনিম্ন:	Minimum:
+সর্বশেষ অবস্থা	Latest status
+সর্বশেষ সফল সিঙ্ক	Last successful sync
+সর্বোচ্চ	Maximum
+সর্বোচ্চ %	Maximum %
+সর্বোচ্চ % ঠিক নয়	Maximum % is not valid
+সর্বোচ্চ আর্দ্রতা %	Maximum moisture %
+সর্বোচ্চ ডোজ	Maximum dose
+সর্বোচ্চ ডোজ (গ্রাম/টন ফিড)	Maximum dose (gram/ton feed)
+সর্বোচ্চ ফাইবার %	Maximum fibre %
+সর্বোচ্চ ফ্যাট %	Maximum fat %
+সর্বোচ্চ সীমা	Maximum limit
+সর্বোচ্চ সীমা সঠিক সংখ্যা নয়	Maximum limit is not a valid number
+সাধারণ কারণ: দুই ফোনে একই ইউজারনেম/ইনভয়েস নম্বর আলাদা রো-তে তৈরি হয়েছে। একটি ফোনের ডিভাইস কোড বদলে নতুন নম্বর নিন।	Common cause: the same username/invoice number was created in separate rows on two phones. Change the device code of one phone and take a new number.
+সাপ্তাহিক ছুটি শুক্রবার ধরা হয়। হাজিরা না তুললে মাসিক বেতনভোগী উপস্থিত ধরা হয়, দৈনিক/পিস কর্মী নয়।	Weekly holiday is taken as Friday. If attendance is not entered, monthly-salaried staff count as present, daily/piece workers do not.
+সাপ্তাহিক ছুটি শুক্রবার; সরকারি ছুটি 'ছুটির দিন' ট্যাবে দিন। অনুমোদনে হাজিরা নিজে বসে যায়।	Weekly holiday is Friday; add public holidays in the 'Holidays' tab. On approval attendance fills in automatically.
+সাপ্লায়ার	Supplier
+সাপ্লায়ার *	Supplier *
+সাপ্লায়ার পেমেন্ট	Supplier payment
+সাপ্লায়ার পেমেন্ট:	Supplier payment:
+সাপ্লায়ার বাছাই করুন	Select a supplier
+সাপ্লায়ারের ক্রেডিট লিমিট থাকে না	Suppliers do not have a credit limit
+সাপ্লায়ারের জন্য বিক্রয়মূল্য হয় না	A selling price does not apply to a supplier
+সাবটোটাল	Subtotal
+সাবটোটাল ঋণাত্মক হতে পারে না	Subtotal cannot be negative
+সারির সহগের সংখ্যা মেলেনি	Number of row coefficients does not match
+সার্ভার	Server
+সার্ভার চালু	Server running
+সার্ভার বন্ধ	Server stopped
+সিঙ্ক (Wi-Fi)	Sync (Wi-Fi)
+সিঙ্ক চলছে…	Syncing…
+সিঙ্ক হাব	Sync hub
+সিঙ্কে অজানা ত্রুটি	Unknown error during sync
+সিঙ্কের মাঝে হাবের সংযোগ ছিঁড়ে গেছে — আবার চেষ্টা করুন (যতটুকু হয়েছে তা সংরক্ষিত)	The hub connection dropped during sync — try again (whatever was done is saved)
+সিদ্ধান্ত	Decision
+সিদ্ধান্ত সঠিক নয়:	Decision is not valid:
+সিদ্ধান্তের কারণ/নোট	Reason/note for the decision
+সিদ্ধান্তের নোট	Decision note
+সিদ্ধান্তের নোট:	Decision note:
+সিস্টেম	System
+সুপারভাইজার পরিদর্শন করে নিশ্চিত করেছেন	A supervisor inspected and confirmed
+সেকেন্ড পরে চেষ্টা করুন	seconds later
+সেটআপ আগেই হয়ে গেছে	Setup has already been done
+সেটআপ ব্যর্থ	Setup failed
+সেফটি	Safety
+স্ক্যান	Scan
+স্ক্র্যাপ মূল্য ০ থেকে ক্রয়মূল্যের মধ্যে হতে হবে	Scrap value must be between 0 and the purchase price
+স্টক	Stock
+স্টক অপর্যাপ্ত:	Insufficient stock:
+স্টক অ্যাডজাস্টমেন্ট	Stock adjustment
+স্টক অ্যালার্ট	Stock alerts
+স্টক ডেলিভারির সময় কমবে; QC-পাস লট থেকেই মাল যাবে।	Stock is reduced at delivery; goods go only from QC-passed lots.
+স্টক থাকা আইটেম মোছা যাবে না	An item with stock cannot be deleted
+স্টক থাকা গুদাম মোছা যাবে না	A warehouse with stock cannot be deleted
+স্টক মুভমেন্ট	Stock movements
+স্টকে ফেরত	Return to stock
+স্টকে ফেরত (ভালো অবস্থায়)	Return to stock (in good condition)
+স্টকের চেয়ে বেশি কমানো যাবে না (আছে	Cannot reduce more than stock (available
+স্টপ	Stop
+স্টপ পাওয়া যায়নি	Stop not found
+স্ট্যাটাস	Status
+স্থায়ী	Permanent
+স্পেয়ার পার্টস মজুদ	Spare parts stock
+স্বয়ংক্রিয় প্রিভেন্টিভ রক্ষণাবেক্ষণ	Automatic preventive maintenance
+স্বয়ংক্রিয় সিঙ্ক	Automatic sync
+স্বাগতম,	Welcome,
+স্বাভাবিক	Normal
+হাজিরা	Attendance
+হাব (এই ফোন কেন্দ্রীয়)	Hub (this phone is central)
+হাব না থেকে সাধারণ ফোন হই	Stop being the hub and be a normal phone
+হাব ফোন Wi-Fi এ ও চার্জারে রাখুন এবং এই অ্যাপের জন্য ব্যাটারি অপ্টিমাইজেশন বন্ধ করুন, নইলে অ্যান্ড্রয়েড সার্ভার বন্ধ করে দিতে পারে।	Keep the hub phone on Wi-Fi and on the charger and turn off battery optimisation for this app, otherwise Android may stop the server.
+হাব ফোন অন্য হাবে পেয়ার হতে পারে না	A hub phone cannot be paired to another hub
+হাব সাড়া দিয়েছে কিন্তু ত্রুটি (	The hub responded but with an error (
+হাবে ত্রুটি (	Error on the hub (
+হাবে ত্রুটি:	Error on the hub:
+হাবে পৌঁছানো যায়নি (	Could not reach the hub (
+হাবের IP (যেমন 192.168.0.10)	Hub IP (e.g. 192.168.0.10)
+হাবের IP ঠিকানা দিন	Enter the hub's IP address
+হাবের উত্তর পড়া যায়নি — পেয়ারিং কোড বদলে থাকতে পারে, আবার পেয়ার করুন	The hub's reply could not be read — the pairing code may have changed, pair again
+হাবের সাথে সংযোগ	Connection to the hub
+হার ঋণাত্মক হতে পারে না	Rate cannot be negative
+হার ০ থেকে ১ এর মধ্যে (দশমিকে) হতে হবে	Rate must be between 0 and 1 (as a decimal)
+হিসাব	Accounts
+হিসাব (লাইভ)	Accounts (live)
+হিসাব করুন	Calculate
+হিসাব রিপোর্ট	Accounts reports
+হিসাব হচ্ছে…	Calculating…
+হোল্ড	Hold
+হোল্ড বা বাতিলের কারণ লিখুন	Write the reason for hold or rejection
+হোল্ডে রাখুন	Put on hold
+হ্যাঁ	Yes
+০ রাখলে ওই লাইন এই নোটে বাদ যাবে।	Set 0 to drop that line from this note.
+০-৩০ দিন	0-30 days
+০–৩০ দিন	0–30 days
+১	1
+১ ইউনিট = কত গ্রাম *	1 unit = how many grams *
+১ কম	1 Low
+২ মাঝারি	2 Medium
+৩ গুরুতর	3 Severe
+৩১-৬০ দিন	31-60 days
+৫,০০০ টাকার বেশি হলে (ম্যানেজার ছাড়া) অনুমোদনের অপেক্ষায় থাকবে।	Above 5,000 taka it will wait for approval (unless by a manager).
+৬১-৯০ দিন	61-90 days
+৯০+ দিন	90+ days
+৳	৳
+— ডেলিভারি	— delivery
+— মেয়াদ	— expiry
+— ৳	— ৳
+⚠ লাইন-ক্লিনিং বাকি	⚠ Line cleaning pending

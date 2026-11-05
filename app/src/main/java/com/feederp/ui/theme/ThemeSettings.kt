@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/** থিম মোড (সিস্টেম/লাইট/ডার্ক) সংরক্ষণ। */
 @Singleton
 class ThemeSettings @Inject constructor(@ApplicationContext context: Context) {
     private val p = context.getSharedPreferences("ui", Context.MODE_PRIVATE)
@@ -16,6 +17,7 @@ class ThemeSettings @Inject constructor(@ApplicationContext context: Context) {
     )
     val mode: StateFlow<ThemeMode> = _mode.asStateFlow()
 
+    /** সিস্টেম → লাইট → ডার্ক → সিস্টেম */
     fun cycle() {
         val next = ThemeMode.entries[(_mode.value.ordinal + 1) % ThemeMode.entries.size]
         _mode.value = next

@@ -49,6 +49,7 @@ import androidx.compose.ui.unit.dp
 import kotlin.math.cos
 import kotlin.math.sin
 
+/** মেনুর ইংরেজি নাম দেখে আইকন বেছে নেয় (না মিললে সাধারণ অ্যাপস আইকন)। */
 fun moduleIcon(titleEn: String): ImageVector {
     val t = titleEn.lowercase()
     return when {
@@ -100,11 +101,14 @@ private val HexShape = GenericShape { size, _ ->
     close()
 }
 
+/** হেক্সাগন আকৃতির গ্রেডিয়েন্ট ব্যাজের ভেতরে আইকন। */
 @Composable
 fun HexIcon(icon: ImageVector, size: Dp = 48.dp, modifier: Modifier = Modifier) {
     val c = MaterialTheme.colorScheme
     Box(
-        modifier.size(size).background(Brush.linearGradient(listOf(c.primary, c.tertiary)), HexShape),
+        modifier
+            .size(size)
+            .background(Brush.linearGradient(listOf(c.primary, c.tertiary)), HexShape),
         contentAlignment = Alignment.Center,
     ) {
         Icon(icon, contentDescription = null, tint = c.onPrimary, modifier = Modifier.size(size * 0.5f))

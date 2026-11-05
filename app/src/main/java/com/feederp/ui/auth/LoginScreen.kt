@@ -15,7 +15,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
+import com.feederp.ui.common.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -173,7 +173,10 @@ fun LoginScreen(onLoggedIn: () -> Unit, onOpenSync: () -> Unit = {}, vm: LoginVi
                 )
             }
             Spacer(Modifier.height(8.dp))
-            androidx.compose.foundation.layout.Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
+            androidx.compose.foundation.layout.Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.fillMaxWidth(),
+            ) {
                 androidx.compose.material3.Checkbox(checked = state.remember, onCheckedChange = vm::onRemember)
                 Text(tr("এই ফোনে লগইন মনে রাখুন (৩০ দিন)", "Keep me signed in on this phone (30 days)"), style = MaterialTheme.typography.bodyMedium)
             }
