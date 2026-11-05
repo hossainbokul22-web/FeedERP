@@ -16,40 +16,40 @@ import androidx.compose.ui.unit.sp
 
 /** গাঢ় সবুজ-টিল + উষ্ণ অ্যাম্বার অ্যাকসেন্ট। সম্পূর্ণ লাইট ও ডার্ক স্কিম। */
 private val LightScheme = lightColorScheme(
-    primary = Color(0xFF0B6B57), onPrimary = Color.White,
-    primaryContainer = Color(0xFFBFEFE2), onPrimaryContainer = Color(0xFF00201A),
-    secondary = Color(0xFFB26A00), onSecondary = Color.White,
-    secondaryContainer = Color(0xFFFFDDB3), onSecondaryContainer = Color(0xFF3A2400),
+    primary = Color(0xFF017079), onPrimary = Color.White,
+    primaryContainer = Color(0xFFDFF3F4), onPrimaryContainer = Color(0xFF00363B),
+    secondary = Color(0xFF20B7C0), onSecondary = Color(0xFF00363B),
+    secondaryContainer = Color(0xFFC4EEF1), onSecondaryContainer = Color(0xFF00363B),
     tertiary = Color(0xFF3B6EA5), onTertiary = Color.White,
-    background = Color(0xFFF3F8F6), onBackground = Color(0xFF16201D),
-    surface = Color(0xFFFFFFFF), onSurface = Color(0xFF16201D),
-    surfaceVariant = Color(0xFFDCE8E3), onSurfaceVariant = Color(0xFF3F4945),
-    surfaceContainerLowest = Color(0xFFFFFFFF), surfaceContainerLow = Color(0xFFF7FBF9),
-    surfaceContainer = Color(0xFFEDF4F1), surfaceContainerHigh = Color(0xFFE6EFEB),
-    surfaceContainerHighest = Color(0xFFE0EAE6),
-    outline = Color(0xFF6F7B77), outlineVariant = Color(0xFFBFC9C4),
+    background = Color(0xFFE3F3F4), onBackground = Color(0xFF000000),
+    surface = Color(0xFFE9F6F7), onSurface = Color(0xFF000000),
+    surfaceVariant = Color(0xFFD2E8EA), onSurfaceVariant = Color(0xFF2B4447),
+    surfaceContainerLowest = Color(0xFFF4FBFB), surfaceContainerLow = Color(0xFFEDF8F8),
+    surfaceContainer = Color(0xFFE3F3F4), surfaceContainerHigh = Color(0xFFDFF3F4),
+    surfaceContainerHighest = Color(0xFFD6ECEE),
+    outline = Color(0xFF5E7A7D), outlineVariant = Color(0xFFB7D3D5),
     error = Color(0xFFB3261E), onError = Color.White,
 )
 
 private val DarkScheme = darkColorScheme(
-    primary = Color(0xFF5ED3B4), onPrimary = Color(0xFF00382D),
-    primaryContainer = Color(0xFF005143), onPrimaryContainer = Color(0xFFBFEFE2),
-    secondary = Color(0xFFFFB95A), onSecondary = Color(0xFF462B00),
-    secondaryContainer = Color(0xFF654000), onSecondaryContainer = Color(0xFFFFDDB3),
+    primary = Color(0xFF20B7C0), onPrimary = Color(0xFF000000),
+    primaryContainer = Color(0xFF01575E), onPrimaryContainer = Color(0xFFDFF3F4),
+    secondary = Color(0xFF6FD6DD), onSecondary = Color(0xFF00363B),
+    secondaryContainer = Color(0xFF014E54), onSecondaryContainer = Color(0xFFDFF3F4),
     tertiary = Color(0xFFA4C8FF), onTertiary = Color(0xFF00315E),
-    background = Color(0xFF0E1513), onBackground = Color(0xFFDEE4E1),
-    surface = Color(0xFF121A17), onSurface = Color(0xFFDEE4E1),
-    surfaceVariant = Color(0xFF3F4945), onSurfaceVariant = Color(0xFFBEC9C4),
-    surfaceContainerLowest = Color(0xFF0A100E), surfaceContainerLow = Color(0xFF161E1B),
-    surfaceContainer = Color(0xFF1A2320), surfaceContainerHigh = Color(0xFF222C28),
-    surfaceContainerHighest = Color(0xFF2B3632),
-    outline = Color(0xFF88938F), outlineVariant = Color(0xFF3F4945),
+    background = Color(0xFF000000), onBackground = Color(0xFFDFF3F4),
+    surface = Color(0xFF0B1415), onSurface = Color(0xFFDFF3F4),
+    surfaceVariant = Color(0xFF1C2E30), onSurfaceVariant = Color(0xFFB7D3D5),
+    surfaceContainerLowest = Color(0xFF000000), surfaceContainerLow = Color(0xFF0B1415),
+    surfaceContainer = Color(0xFF101B1C), surfaceContainerHigh = Color(0xFF162426),
+    surfaceContainerHighest = Color(0xFF1D2F31),
+    outline = Color(0xFF7FA0A3), outlineVariant = Color(0xFF2A4143),
     error = Color(0xFFFFB4AB), onError = Color(0xFF690005),
 )
 
 private val AppShapes = Shapes(
-    extraSmall = RoundedCornerShape(6.dp), small = RoundedCornerShape(10.dp),
-    medium = RoundedCornerShape(16.dp), large = RoundedCornerShape(22.dp), extraLarge = RoundedCornerShape(28.dp),
+    extraSmall = RoundedCornerShape(8.dp), small = RoundedCornerShape(14.dp),
+    medium = RoundedCornerShape(20.dp), large = RoundedCornerShape(26.dp), extraLarge = RoundedCornerShape(32.dp),
 )
 
 private val Base = Typography()

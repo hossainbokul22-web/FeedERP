@@ -1,5 +1,6 @@
 package com.feederp.ui.home
 
+import com.feederp.ui.theme.neo
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.clickable
 import androidx.compose.runtime.getValue
@@ -32,7 +33,7 @@ fun DashboardHeader(data: DashboardData?, modifier: Modifier = Modifier) {
     Column(modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(10.dp)) {
         data.todaySalesPaisa?.let { today ->
             Card(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth().neo(),
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
             ) {
                 Column(Modifier.padding(16.dp)) {
@@ -72,7 +73,7 @@ private data class Kpi(val label: String, val value: String, val warn: Boolean)
 @Composable
 private fun KpiCard(k: Kpi, modifier: Modifier) {
     Card(
-        modifier = modifier,
+        modifier = modifier.neo(16.dp, 4.dp),
         colors = CardDefaults.cardColors(
             containerColor = if (k.warn) MaterialTheme.colorScheme.secondaryContainer else MaterialTheme.colorScheme.surfaceContainerHigh,
         ),
@@ -113,7 +114,7 @@ fun CompanyNameCard() {
     var editing by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
     var draft by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf("") }
     Card(
-        modifier = Modifier.fillMaxWidth().clickable { draft = name; editing = true },
+        modifier = Modifier.fillMaxWidth().neo(16.dp, 4.dp).clickable { draft = name; editing = true },
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainer),
     ) {
         Column(Modifier.padding(12.dp)) {

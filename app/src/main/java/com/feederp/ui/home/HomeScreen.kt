@@ -1,5 +1,6 @@
 package com.feederp.ui.home
 
+import com.feederp.ui.theme.neo
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.height
@@ -133,7 +134,7 @@ fun HomeScreen(onNavigate: (String) -> Unit, onLoggedOut: () -> Unit, vm: HomeVi
                 items(entries.chunked(2), key = { row -> row.first().route }) { row ->
                     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                         row.forEach { menu ->
-                            Card(Modifier.weight(1f).clickable { onNavigate(menu.route) }) {
+                            Card(Modifier.weight(1f).neo().clickable { onNavigate(menu.route) }, colors = androidx.compose.material3.CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)) {
                                 androidx.compose.foundation.layout.Column(Modifier.padding(14.dp)) {
                                     HexIcon(moduleIcon(menu.titleEn))
                                     androidx.compose.foundation.layout.Spacer(Modifier.height(8.dp))

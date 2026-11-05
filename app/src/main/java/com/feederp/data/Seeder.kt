@@ -28,11 +28,32 @@ object SeedData {
     )
 
     fun accountId(code: String) = "acc-$code"
+
+    data class ItemDef(val code: String, val name: String, val type: ItemType)
+
+    val items: List<ItemDef> = listOf(
+        "Heat Stressor", "Prebiotics", "Choline Chloride", "Choline Chloride-60%", "MCP (Sinophos)",
+        "Fulvat / Minerva", "Fermkito", "MG Bile", "Fish Vitamin Premix", "Fish Vitamin Premix (Renata)",
+        "Fish Minerals Premix", "Vitamin-C (Thermostable)", "Alquermold Natural", "Oyster Extract",
+        "Sea Weed Extract", "Bacterial Phage", "Enterohelp Dry", "Turmeric Oil", "Pellet Binder",
+        "Salt (Free Flowing)", "Mold Inhibitor (Fungicap-S)", "Aquermold / Mycosorb Dry", "L-Arginine",
+        "Amvit-C", "Bacteriase", "Baci guard 800", "Phytase-5000",
+    ).mapIndexed { i, n ->
+        val type = when {
+            n.contains("Premix") -> ItemType.PREMIX
+            n == "Pellet Binder" || n.startsWith("Salt") -> ItemType.ADDITIVE
+            else -> ItemType.MEDICINE
+        }
+        ItemDef("MED-" + (i + 1).toString().padStart(3, '0'), n, type)
+    }
+
+    fun itemId(code: String) = "item-seed-$code"
 }
 
 @Singleton
 class Seeder @Inject constructor(
     private val units: UnitDao,
+    private val items: ItemDao,
     private val warehouses: WarehouseDao,
     private val accounts: AccountDao,
     private val stamper: Stamper,
@@ -56,6 +77,18 @@ class Seeder @Inject constructor(
                     WarehouseEntity(
                         id = w.id, name = w.name, isMedicineStore = w.isMedicineStore,
                         updatedAt = now, deviceId = device,
+                    )
+                )
+            }
+        }
+        SeedData.items.forEach { d ->
+            val id = SeedData.itemId(d.code)
+            if (items.getById(id) == null && items.getByCode(d.code) == null) {
+                items.upsert(
+                    ItemEntity(
+                        id = id, code = d.code, name = d.name, type = d.type, unitId = "unit-kg",
+                        activeIngredient = if (d.type == ItemType.MEDICINE) d.name else null,
+                        requiresQc = true, updatedAt = now, deviceId = device,
                     )
                 )
             }

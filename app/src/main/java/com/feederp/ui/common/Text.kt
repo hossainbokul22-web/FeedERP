@@ -46,3 +46,6 @@ fun Text(
         softWrap = softWrap, maxLines = maxLines, minLines = minLines, onTextLayout = onTextLayout, style = style,
     )
 }
+
+@Composable
+fun trs(text: String): String = if (LocalLang.current == AppLang.EN) Translator.en(text) else text

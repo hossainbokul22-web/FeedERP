@@ -1,5 +1,6 @@
 package com.feederp.ui.common
 
+import com.feederp.ui.theme.neo
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -130,7 +131,8 @@ fun <T> SearchableList(
         LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
             items(filtered) { item ->
                 Card(
-                    Modifier.fillMaxWidth().let { m -> if (onClick != null) m.clickable { onClick(item) } else m }
+                    Modifier.fillMaxWidth().neo(16.dp, 4.dp).let { m -> if (onClick != null) m.clickable { onClick(item) } else m },
+                    colors = androidx.compose.material3.CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
                 ) { Column(Modifier.padding(12.dp)) { row(item) } }
             }
         }

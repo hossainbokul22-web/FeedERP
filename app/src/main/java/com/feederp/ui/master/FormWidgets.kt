@@ -65,7 +65,7 @@ fun <T> DropdownField(
     var expanded by remember { mutableStateOf(false) }
     Box(modifier.fillMaxWidth()) {
         OutlinedTextField(
-            value = selected?.let(optionLabel) ?: "",
+            value = com.feederp.ui.common.trs(selected?.let(optionLabel) ?: ""),
             onValueChange = {},
             readOnly = true,
             label = { Text(label) },
