@@ -43,7 +43,27 @@ fun StockListScreen(
     val selected by vm.selectedWarehouse.collectAsStateWithLifecycle()
     val labels = remember(warehouses) { listOf(ALL_WH) + warehouses.map { it.name } }
 
-    ScreenScaffold(title = "স্টক", onBack = onBack) { pad ->
+    val whName = warehouses.firstOrNull { it.id == selected }?.name ?: ALL_WH
+    val stockTable = remember(rows, whName) {
+        if (rows.isEmpty()) null else com.feederp.ui.common.ReportTable(
+            "স্টক রিপোর্ট", "গুদাম: $whName",
+            listOf(
+                com.feederp.ui.common.ReportSection(
+                    null, listOf("কোড", "আইটেম", "ধরন", "পরিমাণ", "অবস্থা"),
+                    rows.map { r ->
+                        com.feederp.ui.common.ReportRow(
+                            listOf(
+                                r.item.code, r.item.name, MasterLabels.itemType(r.item.type), Weight.formatKg(r.qtyGrams),
+                                if (r.isNegative) "নেগেটিভ স্টক" else if (r.isLow) "কম স্টক" else "ঠিক আছে",
+                            )
+                        )
+                    },
+                    setOf(3),
+                )
+            ),
+        )
+    }
+    ScreenScaffold(title = "স্টক", onBack = onBack, actions = { com.feederp.ui.common.ReportActions(stockTable) }) { pad ->
         Column(Modifier.padding(pad)) {
             DropdownField(
                 label = "গুদাম",

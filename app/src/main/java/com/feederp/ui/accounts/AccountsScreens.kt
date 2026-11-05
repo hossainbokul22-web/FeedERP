@@ -40,7 +40,43 @@ fun ReportsScreen(onBack: () -> Unit, vm: ReportsViewModel = hiltViewModel()) {
     val st by vm.state.collectAsStateWithLifecycle()
     val message by vm.message.collectAsStateWithLifecycle()
     MessageDialog(message, onDismiss = vm::clearMessage)
-    ScreenScaffold(title = "হিসাব রিপোর্ট", onBack = onBack) { padding ->
+    val reportTable = androidx.compose.runtime.remember(st) {
+        if (st.pnl == null && st.trial == null) null else com.feederp.ui.common.ReportTable(
+            "হিসাব রিপোর্ট", st.period.labelBn,
+            buildList {
+                st.pnl?.let { p ->
+                    val rows = ArrayList<com.feederp.ui.common.ReportRow>()
+                    fun grp(title: String, ls: List<PnlLine>) {
+                        if (ls.isNotEmpty()) {
+                            rows.add(com.feederp.ui.common.ReportRow(listOf(title, ""), true))
+                            ls.forEach { rows.add(com.feederp.ui.common.ReportRow(listOf("${it.code} ${it.name}", taka(it.amountPaisa)))) }
+                        }
+                    }
+                    grp("আয়", p.revenue)
+                    rows.add(com.feederp.ui.common.ReportRow(listOf("মোট আয়", taka(p.totalRevenuePaisa)), true))
+                    grp("সরাসরি খরচ (COGS ইত্যাদি)", p.directCosts)
+                    rows.add(com.feederp.ui.common.ReportRow(listOf("মোট লাভ (Gross)", taka(p.grossProfitPaisa)), true))
+                    grp("পরিচালন খরচ", p.expenses)
+                    rows.add(com.feederp.ui.common.ReportRow(listOf("নিট লাভ/(ক্ষতি)", taka(p.netProfitPaisa)), true))
+                    add(com.feederp.ui.common.ReportSection("লাভ-ক্ষতি", listOf("বিবরণ", "৳"), rows, setOf(1)))
+                }
+                st.trial?.let { t ->
+                    add(
+                        com.feederp.ui.common.ReportSection(
+                            "ট্রায়াল ব্যালেন্স", listOf("অ্যাকাউন্ট", "ডেবিট ৳", "ক্রেডিট ৳"),
+                            t.rows.map {
+                                com.feederp.ui.common.ReportRow(
+                                    listOf("${it.code} ${it.name}", if (it.debitPaisa > 0) taka(it.debitPaisa) else "", if (it.creditPaisa > 0) taka(it.creditPaisa) else "")
+                                )
+                            } + com.feederp.ui.common.ReportRow(listOf("মোট", taka(t.totalDebitPaisa), taka(t.totalCreditPaisa)), true),
+                            setOf(1, 2),
+                        )
+                    )
+                }
+            },
+        )
+    }
+    ScreenScaffold(title = "হিসাব রিপোর্ট", onBack = onBack, actions = { com.feederp.ui.common.ReportActions(reportTable) }) { padding ->
         Column(Modifier.padding(padding).padding(12.dp).verticalScroll(rememberScrollState())) {
             DropdownField(
                 label = "সময়কাল", options = Period.values().toList(), selected = st.period,

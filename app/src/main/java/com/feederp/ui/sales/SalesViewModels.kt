@@ -213,11 +213,11 @@ class InvoiceDetailViewModel @Inject constructor(
     }
 
     /** ইনভয়েস PDF [out]-এ লেখে। কোম্পানির নাম সেটিংসে না থাকায় আপাতত অ্যাপের নাম। */
-    fun exportPdf(out: java.io.OutputStream, onDone: () -> Unit) = launchSafe(onDone) {
+    fun exportPdf(out: java.io.OutputStream, companyName: String, onDone: () -> Unit) = launchSafe(onDone) {
         val st = state.value
         val inv = st.invoice ?: throw IllegalStateException("ইনভয়েস পাওয়া যায়নি")
         val model = com.feederp.sales.InvoicePrintModel(
-            companyName = "ফিড ERP", invoiceNo = inv.invoiceNo, dateMillis = inv.invoiceDate, partyName = st.partyName,
+            companyName = companyName, invoiceNo = inv.invoiceNo, dateMillis = inv.invoiceDate, partyName = st.partyName,
             lines = st.lines.map { l ->
                 com.feederp.sales.PrintLine(st.itemNames[l.itemId] ?: "?", kg(l.qtyGrams), taka(l.unitPricePaisaPerKg), taka(l.lineTotalPaisa))
             },

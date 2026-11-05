@@ -72,6 +72,8 @@ class HomeViewModel @Inject constructor(
         return if (days >= 7) "শেষ ব্যাকআপ $days দিন আগে — নতুন ব্যাকআপ নিন।" else null
     }
 
+    val canEditCompany: Boolean get() = sessionManager.can(com.feederp.core.Permission.USERS)
+
     fun logout(done: () -> Unit) {
         viewModelScope.launch {
             auth.logout()
@@ -116,6 +118,7 @@ fun HomeScreen(onNavigate: (String) -> Unit, onLoggedOut: () -> Unit, vm: HomeVi
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             item(key = "dashboard") { DashboardHeader(dash) }
+            if (vm.canEditCompany) item(key = "company") { CompanyNameCard() }
             vm.backupWarning()?.let { w ->
                 item(key = "backup-warning") {
                     Card(modifier = Modifier.fillMaxWidth()) {

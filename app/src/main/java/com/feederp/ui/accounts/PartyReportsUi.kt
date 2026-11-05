@@ -77,7 +77,28 @@ fun PartyLedgerScreen(onBack: () -> Unit, vm: PartyLedgerViewModel = hiltViewMod
     val parties by vm.parties.collectAsStateWithLifecycle()
     val sel by vm.party.collectAsStateWithLifecycle()
     val rows by vm.rows.collectAsStateWithLifecycle()
-    ScreenScaffold(title = "পার্টি লেজার", onBack = onBack) { padding ->
+    val ledgerTable = androidx.compose.runtime.remember(rows, sel) {
+        if (sel == null || rows.isEmpty()) null else com.feederp.ui.common.ReportTable(
+            "পার্টি লেজার", "পার্টি: " + (parties.firstOrNull { it.id == sel }?.name ?: ""),
+            listOf(
+                com.feederp.ui.common.ReportSection(
+                    null, listOf("তারিখ", "বিবরণ", "ডেবিট ৳", "ক্রেডিট ৳", "ব্যালেন্স ৳"),
+                    rows.map { r ->
+                        com.feederp.ui.common.ReportRow(
+                            listOf(
+                                formatDate(r.entry.entryDate), (r.entry.voucherType + " " + r.entry.memo.orEmpty()).trim(),
+                                if (r.entry.debitPaisa > 0) taka(r.entry.debitPaisa) else "",
+                                if (r.entry.creditPaisa > 0) taka(r.entry.creditPaisa) else "",
+                                taka(r.balancePaisa),
+                            )
+                        )
+                    },
+                    setOf(2, 3, 4),
+                )
+            ),
+        )
+    }
+    ScreenScaffold(title = "পার্টি লেজার", onBack = onBack, actions = { com.feederp.ui.common.ReportActions(ledgerTable) }) { padding ->
         Column(Modifier.padding(padding).padding(12.dp)) {
             DropdownField("পার্টি", parties.map { it.id }, sel, { id -> parties.firstOrNull { it.id == id }?.name ?: id }, { vm.select(it) })
             Spacer(Modifier.height(4.dp))
@@ -126,7 +147,33 @@ class AgingViewModel @Inject constructor(private val ledgerDao: LedgerDao, priva
 @Composable
 fun AgingScreen(onBack: () -> Unit, vm: AgingViewModel = hiltViewModel()) {
     val lines by vm.lines.collectAsStateWithLifecycle()
-    ScreenScaffold(title = "বাকির বয়স (ক্রেতা)", onBack = onBack) { padding ->
+    val agingTable = androidx.compose.runtime.remember(lines) {
+        if (lines.isEmpty()) null else com.feederp.ui.common.ReportTable(
+            "বাকির বয়স (ক্রেতা)", null,
+            listOf(
+                com.feederp.ui.common.ReportSection(
+                    null, listOf("ক্রেতা", "০–৩০ দিন", "৩১–৬০", "৬১–৯০", "৯০+", "মোট ৳", "অগ্রিম"),
+                    lines.map { l ->
+                        com.feederp.ui.common.ReportRow(
+                            listOf(
+                                l.name, taka(l.row.currentPaisa), taka(l.row.d31to60Paisa), taka(l.row.d61to90Paisa),
+                                taka(l.row.over90Paisa), taka(l.row.totalDuePaisa), taka(l.row.advancePaisa),
+                            )
+                        )
+                    } + com.feederp.ui.common.ReportRow(
+                        listOf(
+                            "মোট", taka(lines.sumOf { it.row.currentPaisa }), taka(lines.sumOf { it.row.d31to60Paisa }),
+                            taka(lines.sumOf { it.row.d61to90Paisa }), taka(lines.sumOf { it.row.over90Paisa }),
+                            taka(lines.sumOf { it.row.totalDuePaisa }), taka(lines.sumOf { it.row.advancePaisa }),
+                        ),
+                        true,
+                    ),
+                    setOf(1, 2, 3, 4, 5, 6),
+                )
+            ),
+        )
+    }
+    ScreenScaffold(title = "বাকির বয়স (ক্রেতা)", onBack = onBack, actions = { com.feederp.ui.common.ReportActions(agingTable) }) { padding ->
         Column(Modifier.padding(padding).padding(12.dp)) {
             if (lines.isEmpty()) Text("কোনো বকেয়া নেই", style = MaterialTheme.typography.bodyMedium)
             LazyColumn(verticalArrangement = Arrangement.spacedBy(6.dp)) {
@@ -183,7 +230,31 @@ fun CashBookScreen(onBack: () -> Unit, vm: CashBookViewModel = hiltViewModel()) 
     val period by vm.period.collectAsStateWithLifecycle()
     val rows by vm.rows.collectAsStateWithLifecycle()
     val opening by vm.opening.collectAsStateWithLifecycle()
-    ScreenScaffold(title = "ক্যাশবুক", onBack = onBack) { padding ->
+    val cashTable = androidx.compose.runtime.remember(rows, opening, account, period) {
+        com.feederp.ui.common.ReportTable(
+            "ক্যাশবুক", (CASH_ACCOUNTS.firstOrNull { it.first == account }?.second ?: "") + " · " + period.labelBn,
+            listOf(
+                com.feederp.ui.common.ReportSection(
+                    null, listOf("তারিখ", "বিবরণ", "জমা ৳", "খরচ ৳", "ব্যালেন্স ৳"),
+                    listOf(com.feederp.ui.common.ReportRow(listOf("", "শুরুর জের", "", "", taka(opening)), true)) +
+                        rows.map { r ->
+                            com.feederp.ui.common.ReportRow(
+                                listOf(
+                                    formatDate(r.date), r.memo.orEmpty(),
+                                    if (r.inPaisa > 0) taka(r.inPaisa) else "", if (r.outPaisa > 0) taka(r.outPaisa) else "",
+                                    taka(r.balancePaisa),
+                                )
+                            )
+                        } + com.feederp.ui.common.ReportRow(
+                            listOf("", "মোট", taka(rows.sumOf { it.inPaisa }), taka(rows.sumOf { it.outPaisa }), taka(rows.lastOrNull()?.balancePaisa ?: opening)),
+                            true,
+                        ),
+                    setOf(2, 3, 4),
+                )
+            ),
+        )
+    }
+    ScreenScaffold(title = "ক্যাশবুক", onBack = onBack, actions = { com.feederp.ui.common.ReportActions(cashTable) }) { padding ->
         Column(Modifier.padding(padding).padding(12.dp)) {
             DropdownField("খাত", CASH_ACCOUNTS.map { it.first }, account, { c -> CASH_ACCOUNTS.first { it.first == c }.second }, { vm.setAccount(it) })
             Spacer(Modifier.height(6.dp))

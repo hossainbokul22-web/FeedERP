@@ -1,6 +1,9 @@
 package com.feederp.ui.home
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.clickable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -99,5 +102,47 @@ private fun WeekBars(values: List<Long>) {
                 cornerRadius = CornerRadius(6.dp.toPx(), 6.dp.toPx()),
             )
         }
+    }
+}
+
+/** রিপোর্ট/ইনভয়েসের মাথায় যে কোম্পানির নাম ছাপা হবে সেটা বদলানোর কার্ড (শুধু মালিক)। */
+@Composable
+fun CompanyNameCard() {
+    val context = androidx.compose.ui.platform.LocalContext.current
+    var name by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(com.feederp.ui.common.CompanyProfile.name(context)) }
+    var editing by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
+    var draft by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf("") }
+    Card(
+        modifier = Modifier.fillMaxWidth().clickable { draft = name; editing = true },
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainer),
+    ) {
+        Column(Modifier.padding(12.dp)) {
+            Text(tr("রিপোর্টে কোম্পানির নাম (বদলাতে চাপুন)", "Company name on reports (tap to change)"), style = MaterialTheme.typography.bodySmall)
+            Text(name, style = MaterialTheme.typography.titleMedium)
+        }
+    }
+    if (editing) {
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { editing = false },
+            title = { Text(tr("কোম্পানির নাম", "Company name")) },
+            text = {
+                androidx.compose.material3.OutlinedTextField(
+                    value = draft, onValueChange = { draft = it }, singleLine = true,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+            },
+            confirmButton = {
+                androidx.compose.material3.TextButton(onClick = {
+                    if (draft.isNotBlank()) {
+                        com.feederp.ui.common.CompanyProfile.setName(context, draft)
+                        name = com.feederp.ui.common.CompanyProfile.name(context)
+                    }
+                    editing = false
+                }) { Text(tr("সংরক্ষণ", "Save")) }
+            },
+            dismissButton = {
+                androidx.compose.material3.TextButton(onClick = { editing = false }) { Text(tr("বাতিল", "Cancel")) }
+            },
+        )
     }
 }

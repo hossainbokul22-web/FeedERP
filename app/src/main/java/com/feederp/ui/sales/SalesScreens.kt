@@ -44,7 +44,10 @@ fun InvoiceListScreen(
     val rows by vm.rows.collectAsStateWithLifecycle()
     ScreenScaffold(
         title = "বিক্রয় ইনভয়েস", onBack = onBack, onAdd = onNew,
-        actions = { TextButton(onClick = onPrices) { Text("দামের তালিকা") } },
+        actions = {
+            ReportActionsFor(rows)
+            TextButton(onClick = onPrices) { Text("দামের তালিকা") }
+        },
     ) { padding ->
         SearchableList(
             items = rows, modifier = Modifier.padding(padding),
@@ -142,7 +145,7 @@ fun InvoiceDetailScreen(onBack: () -> Unit, onReturn: (String) -> Unit = {}, vm:
     val pdfLauncher = androidx.activity.compose.rememberLauncherForActivityResult(
         androidx.activity.result.contract.ActivityResultContracts.CreateDocument("application/pdf"),
     ) { uri ->
-        if (uri != null) ctx.contentResolver.openOutputStream(uri)?.let { vm.exportPdf(it) {} }
+        if (uri != null) ctx.contentResolver.openOutputStream(uri)?.let { vm.exportPdf(it, com.feederp.ui.common.CompanyProfile.name(ctx)) {} }
     }
 
     val inv = st.invoice
@@ -299,4 +302,38 @@ fun PriceListScreen(onBack: () -> Unit, vm: PriceListViewModel = hiltViewModel()
             dismissButton = { TextButton(onClick = { editing = null }) { Text("বাতিল") } },
         )
     }
+}
+
+@Composable
+private fun ReportActionsFor(rows: List<InvoiceRow>) {
+    val table = androidx.compose.runtime.remember(rows) {
+        if (rows.isEmpty()) null else com.feederp.ui.common.ReportTable(
+            "বিক্রয় ইনভয়েস তালিকা", null,
+            listOf(
+                com.feederp.ui.common.ReportSection(
+                    null,
+                    listOf("তারিখ", "ইনভয়েস", "ক্রেতা", "মোট ৳", "আদায় ৳", "বাকি ৳", "অবস্থা"),
+                    rows.map { r ->
+                        com.feederp.ui.common.ReportRow(
+                            listOf(
+                                formatDate(r.invoice.invoiceDate), r.invoice.invoiceNo, r.partyName,
+                                taka(r.invoice.totalPaisa), taka(r.invoice.paidPaisa),
+                                taka((r.invoice.totalPaisa - r.invoice.paidPaisa).coerceAtLeast(0L)),
+                                SalesStatus.labelBn(r.invoice.status),
+                            )
+                        )
+                    } + com.feederp.ui.common.ReportRow(
+                        listOf(
+                            "মোট", "", "",
+                            taka(rows.sumOf { it.invoice.totalPaisa }), taka(rows.sumOf { it.invoice.paidPaisa }),
+                            taka(rows.sumOf { (it.invoice.totalPaisa - it.invoice.paidPaisa).coerceAtLeast(0L) }), "",
+                        ),
+                        true,
+                    ),
+                    setOf(3, 4, 5),
+                )
+            ),
+        )
+    }
+    com.feederp.ui.common.ReportActions(table)
 }
