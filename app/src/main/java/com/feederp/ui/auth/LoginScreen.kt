@@ -37,6 +37,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import com.feederp.ui.theme.tr
 import javax.inject.Inject
 
 data class LoginUiState(
@@ -55,6 +56,7 @@ data class LoginUiState(
 @HiltViewModel
 class LoginViewModel @Inject constructor(
     private val auth: AuthRepository,
+    val languageSettings: com.feederp.ui.theme.LanguageSettings,
 ) : ViewModel() {
     private val _state = MutableStateFlow(LoginUiState())
     val state: StateFlow<LoginUiState> = _state.asStateFlow()
@@ -129,29 +131,33 @@ fun LoginScreen(onLoggedIn: () -> Unit, onOpenSync: () -> Unit = {}, vm: LoginVi
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Text("ফিড ERP", style = MaterialTheme.typography.headlineLarge, color = MaterialTheme.colorScheme.primary)
+            androidx.compose.material3.TextButton(
+                onClick = { vm.languageSettings.toggle() },
+                modifier = Modifier.align(Alignment.End),
+            ) { Text(tr("English", "বাংলা")) }
+            Text(tr("ফিড ERP", "Feed ERP"), style = MaterialTheme.typography.headlineLarge, color = MaterialTheme.colorScheme.primary)
             Spacer(Modifier.height(4.dp))
             Text(
-                if (state.setupMode) "প্রথমবার চালু: মালিকের অ্যাকাউন্ট তৈরি করুন" else "লগইন করুন",
+                if (state.setupMode) tr("প্রথমবার চালু: মালিকের অ্যাকাউন্ট তৈরি করুন", "First run: create the owner account") else tr("লগইন করুন", "Sign in"),
                 style = MaterialTheme.typography.bodyLarge,
             )
             Spacer(Modifier.height(24.dp))
 
             OutlinedTextField(
                 value = state.username, onValueChange = vm::onUsername,
-                label = { Text("ইউজারনেম") }, singleLine = true, modifier = Modifier.fillMaxWidth(),
+                label = { Text(tr("ইউজারনেম", "Username")) }, singleLine = true, modifier = Modifier.fillMaxWidth(),
             )
             if (state.setupMode) {
                 Spacer(Modifier.height(12.dp))
                 OutlinedTextField(
                     value = state.displayName, onValueChange = vm::onDisplayName,
-                    label = { Text("আপনার নাম") }, singleLine = true, modifier = Modifier.fillMaxWidth(),
+                    label = { Text(tr("আপনার নাম", "Your name")) }, singleLine = true, modifier = Modifier.fillMaxWidth(),
                 )
             }
             Spacer(Modifier.height(12.dp))
             OutlinedTextField(
                 value = state.pin, onValueChange = vm::onPin,
-                label = { Text("PIN (${AuthRules.MIN_PIN}-${AuthRules.MAX_PIN} অঙ্ক)") }, singleLine = true,
+                label = { Text(tr("PIN (${AuthRules.MIN_PIN}-${AuthRules.MAX_PIN} অঙ্ক)", "PIN (${AuthRules.MIN_PIN}-${AuthRules.MAX_PIN} digits)")) }, singleLine = true,
                 visualTransformation = PasswordVisualTransformation(),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword),
                 modifier = Modifier.fillMaxWidth(),
@@ -160,7 +166,7 @@ fun LoginScreen(onLoggedIn: () -> Unit, onOpenSync: () -> Unit = {}, vm: LoginVi
                 Spacer(Modifier.height(12.dp))
                 OutlinedTextField(
                     value = state.confirmPin, onValueChange = vm::onConfirmPin,
-                    label = { Text("PIN আবার লিখুন") }, singleLine = true,
+                    label = { Text(tr("PIN আবার লিখুন", "Confirm PIN")) }, singleLine = true,
                     visualTransformation = PasswordVisualTransformation(),
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword),
                     modifier = Modifier.fillMaxWidth(),
@@ -169,7 +175,7 @@ fun LoginScreen(onLoggedIn: () -> Unit, onOpenSync: () -> Unit = {}, vm: LoginVi
             Spacer(Modifier.height(8.dp))
             androidx.compose.foundation.layout.Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
                 androidx.compose.material3.Checkbox(checked = state.remember, onCheckedChange = vm::onRemember)
-                Text("এই ফোনে লগইন মনে রাখুন (৩০ দিন)", style = MaterialTheme.typography.bodyMedium)
+                Text(tr("এই ফোনে লগইন মনে রাখুন (৩০ দিন)", "Keep me signed in on this phone (30 days)"), style = MaterialTheme.typography.bodyMedium)
             }
             state.error?.let {
                 Spacer(Modifier.height(12.dp))
@@ -177,12 +183,12 @@ fun LoginScreen(onLoggedIn: () -> Unit, onOpenSync: () -> Unit = {}, vm: LoginVi
             }
             Spacer(Modifier.height(20.dp))
             Button(onClick = vm::submit, enabled = !state.busy, modifier = Modifier.fillMaxWidth()) {
-                Text(if (state.setupMode) "অ্যাকাউন্ট তৈরি ও প্রবেশ" else "প্রবেশ")
+                Text(if (state.setupMode) tr("অ্যাকাউন্ট তৈরি ও প্রবেশ", "Create account & enter") else tr("প্রবেশ", "Enter"))
             }
             if (state.setupMode) {
                 Spacer(Modifier.height(16.dp))
                 androidx.compose.material3.OutlinedButton(onClick = onOpenSync, modifier = Modifier.fillMaxWidth()) {
-                    Text("এটা নতুন ফোন? হাবের সাথে যুক্ত হয়ে ইউজার আনুন")
+                    Text(tr("এটা নতুন ফোন? হাবের সাথে যুক্ত হয়ে ইউজার আনুন", "New phone? Connect to the hub to bring users"))
                 }
                 Text(
                     "দ্বিতীয় বা পরের ফোনে নিজে আলাদা মালিক তৈরি করবেন না; আগে হাবের সাথে সিঙ্ক করুন, তাহলে সব ইউজার চলে আসবে।",

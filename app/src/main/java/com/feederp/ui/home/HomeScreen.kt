@@ -32,7 +32,12 @@ import com.feederp.core.SessionManager
 import com.feederp.core.UserSession
 import com.feederp.ui.AppModules
 import com.feederp.ui.auth.AuthRepository
+import com.feederp.ui.common.HexIcon
 import com.feederp.ui.common.ScreenScaffold
+import com.feederp.ui.common.moduleIcon
+import com.feederp.ui.theme.AppLang
+import com.feederp.ui.theme.LocalLang
+import com.feederp.ui.theme.tr
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
@@ -45,6 +50,7 @@ class HomeViewModel @Inject constructor(
     private val auth: AuthRepository,
     private val backup: com.feederp.backup.BackupRepository,
     val themeSettings: com.feederp.ui.theme.ThemeSettings,
+    val languageSettings: com.feederp.ui.theme.LanguageSettings,
     dashboardRepo: com.feederp.dashboard.DashboardRepository,
 ) : ViewModel() {
     val dashboard: StateFlow<com.feederp.dashboard.DashboardData?> = dashboardRepo.observe()
@@ -81,8 +87,15 @@ fun HomeScreen(onNavigate: (String) -> Unit, onLoggedOut: () -> Unit, vm: HomeVi
     val dash by vm.dashboard.collectAsStateWithLifecycle()
 
     ScreenScaffold(
-        title = session?.let { "স্বাগতম, ${it.displayName}" } ?: "ফিড ERP",
+        title = session?.let { tr("স্বাগতম, ${it.displayName}", "Welcome, ${it.displayName}") } ?: tr("ফিড ERP", "Feed ERP"),
         actions = {
+            androidx.compose.material3.TextButton(onClick = { vm.languageSettings.toggle() }) {
+                Text(
+                    tr("English", "বাংলা"),
+                    color = MaterialTheme.colorScheme.onPrimary,
+                    style = MaterialTheme.typography.labelLarge,
+                )
+            }
             IconButton(onClick = { vm.themeSettings.cycle() }) {
                 Icon(androidx.compose.material.icons.Icons.Filled.Brightness6, contentDescription = "থিম বদলান")
             }
@@ -93,7 +106,7 @@ fun HomeScreen(onNavigate: (String) -> Unit, onLoggedOut: () -> Unit, vm: HomeVi
     ) { padding ->
         if (groups.isEmpty()) {
             Column(Modifier.fillMaxSize().padding(padding).padding(24.dp)) {
-                Text("এই রোলের জন্য এখনও কোনো মডিউল চালু নেই।", style = MaterialTheme.typography.bodyLarge)
+                Text(tr("এই রোলের জন্য এখনও কোনো মডিউল চালু নেই।", "No modules are enabled for this role yet."), style = MaterialTheme.typography.bodyLarge)
             }
             return@ScreenScaffold
         }
@@ -112,24 +125,17 @@ fun HomeScreen(onNavigate: (String) -> Unit, onLoggedOut: () -> Unit, vm: HomeVi
             }
             groups.forEach { (group, entries) ->
                 item(key = "h-$group") {
-                    Text(group, style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
+                    Text(groupLabel(group), style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
                 }
                 items(entries.chunked(2), key = { row -> row.first().route }) { row ->
                     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                         row.forEach { menu ->
                             Card(Modifier.weight(1f).clickable { onNavigate(menu.route) }) {
                                 androidx.compose.foundation.layout.Column(Modifier.padding(14.dp)) {
-                                    Text(
-                                        menu.titleEn.take(1).uppercase(),
-                                        style = MaterialTheme.typography.titleMedium,
-                                        color = MaterialTheme.colorScheme.onPrimary,
-                                        modifier = Modifier
-                                            .background(MaterialTheme.colorScheme.primary, androidx.compose.foundation.shape.CircleShape)
-                                            .padding(horizontal = 12.dp, vertical = 6.dp),
-                                    )
+                                    HexIcon(moduleIcon(menu.titleEn))
                                     androidx.compose.foundation.layout.Spacer(Modifier.height(8.dp))
-                                    Text(menu.titleBn, style = MaterialTheme.typography.titleMedium)
-                                    Text(menu.titleEn, style = MaterialTheme.typography.bodySmall)
+                                    Text(tr(menu.titleBn, menu.titleEn), style = MaterialTheme.typography.titleMedium)
+                                    if (LocalLang.current == AppLang.BN) Text(menu.titleEn, style = MaterialTheme.typography.bodySmall)
                                 }
                             }
                         }
@@ -140,3 +146,12 @@ fun HomeScreen(onNavigate: (String) -> Unit, onLoggedOut: () -> Unit, vm: HomeVi
         }
     }
 }
+
+private val GROUP_EN = mapOf(
+    "মাস্টার ডাটা" to "Master Data", "মান নিয়ন্ত্রণ" to "Quality Control", "ফর্মুলা ও প্রোডাকশন" to "Formulation & Production",
+    "বিক্রয়" to "Sales", "এইচআর" to "HR", "ইনভেন্টরি" to "Inventory", "ক্রয়" to "Purchase", "রক্ষণাবেক্ষণ" to "Maintenance",
+    "R&D" to "R&D", "হিসাব" to "Accounts", "ডিস্ট্রিবিউশন" to "Distribution", "সিস্টেম" to "System",
+)
+
+@Composable
+private fun groupLabel(group: String): String = tr(group, GROUP_EN[group] ?: group)

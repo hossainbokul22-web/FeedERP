@@ -20,6 +20,7 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.unit.dp
 import com.feederp.core.Money
 import com.feederp.dashboard.DashboardData
+import com.feederp.ui.theme.tr
 
 @Composable
 fun DashboardHeader(data: DashboardData?, modifier: Modifier = Modifier) {
@@ -31,7 +32,7 @@ fun DashboardHeader(data: DashboardData?, modifier: Modifier = Modifier) {
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
             ) {
                 Column(Modifier.padding(16.dp)) {
-                    Text("আজকের বিক্রি", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onPrimaryContainer)
+                    Text(tr("আজকের বিক্রি", "Today's Sales"), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onPrimaryContainer)
                     Text(
                         Money.format(today), style = MaterialTheme.typography.headlineLarge,
                         color = MaterialTheme.colorScheme.onPrimaryContainer,
@@ -40,7 +41,7 @@ fun DashboardHeader(data: DashboardData?, modifier: Modifier = Modifier) {
                         Spacer(Modifier.height(12.dp))
                         WeekBars(week)
                         Text(
-                            "শেষ ৭ দিন: ${Money.format(week.sum())}",
+                            tr("শেষ ৭ দিন: ${Money.format(week.sum())}", "Last 7 days: ${Money.format(week.sum())}"),
                             style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onPrimaryContainer,
                         )
                     }
@@ -48,10 +49,10 @@ fun DashboardHeader(data: DashboardData?, modifier: Modifier = Modifier) {
             }
         }
         val kpis = listOfNotNull(
-            data.duePaisa?.let { Kpi("বাকি আদায়", Money.format(it), false) },
-            data.lowStockCount?.let { Kpi("কম স্টক আইটেম", "$it টি", it > 0) },
-            data.pendingQcLots?.let { Kpi("QC অপেক্ষমাণ লট", "$it টি", it > 0) },
-            data.activeBatches?.let { Kpi("চলমান ব্যাচ", "$it টি", false) },
+            data.duePaisa?.let { Kpi(tr("বাকি আদায়", "Receivables"), Money.format(it), false) },
+            data.lowStockCount?.let { Kpi(tr("কম স্টক আইটেম", "Low-stock items"), "$it", it > 0) },
+            data.pendingQcLots?.let { Kpi(tr("QC অপেক্ষমাণ লট", "QC pending lots"), "$it", it > 0) },
+            data.activeBatches?.let { Kpi(tr("চলমান ব্যাচ", "Batches running"), "$it", false) },
         )
         kpis.chunked(2).forEach { row ->
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
