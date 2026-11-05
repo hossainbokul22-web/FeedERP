@@ -7,12 +7,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.Composable
 
+/** নিও (সফট-এমবস) ছায়া: নিচে-ডানে গাঢ়, ওপরে-বামে হালকা আভা। */
 @Composable
 fun Modifier.neo(radius: Dp = 20.dp, depth: Dp = 6.dp): Modifier {
     val dark = MaterialTheme.colorScheme.background.luminance() < 0.5f
