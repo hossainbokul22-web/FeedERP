@@ -16,6 +16,7 @@ import com.feederp.ui.qc.QcModule
 import com.feederp.ui.sales.SalesModule
 import com.feederp.ui.sync.SyncModule
 import com.feederp.ui.purchase.PurchaseModule
+import com.feederp.ui.periodreport.PeriodReportModule
 
 /**
  * সব মডিউলের একটি তালিকা। হোম মেনু ও নেভিগেশন দুটোই এখান থেকে তৈরি হয়।
@@ -42,5 +43,6 @@ object AppModules {
         RndModule,
         SyncModule,
         BackupModule,
+        PeriodReportModule,
     )
 }

@@ -14,7 +14,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-/** গাঢ় সবুজ-টিল + উষ্ণ অ্যাম্বার অ্যাকসেন্ট। সম্পূর্ণ লাইট ও ডার্ক স্কিম। */
+/** টিল প্যালেট: #017079 / #20B7C0 / #000000 / #DFF3F4 — নিও (নরম) ভাইব। */
 private val LightScheme = lightColorScheme(
     primary = Color(0xFF017079), onPrimary = Color.White,
     primaryContainer = Color(0xFFDFF3F4), onPrimaryContainer = Color(0xFF00363B),

@@ -47,5 +47,6 @@ fun Text(
     )
 }
 
+/** টেক্সট-ফিল্ডের value-র মতো যেখানে Text কম্পোজেবল নেই, সেখানে ভাষা অনুযায়ী লেখা। */
 @Composable
 fun trs(text: String): String = if (LocalLang.current == AppLang.EN) Translator.en(text) else text

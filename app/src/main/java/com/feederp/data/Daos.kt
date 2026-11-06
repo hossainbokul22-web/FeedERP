@@ -120,6 +120,9 @@ data class LotBalanceRow(val lotId: String, val qtyGrams: Double)
 /** আইটেম অনুযায়ী মোট স্টক (সব গুদাম)। */
 data class ItemStockRow(val itemId: String, val qtyGrams: Double)
 
+/** সময়কালে আইটেম × মুভমেন্টের ধরন অনুযায়ী যোগফল (type = MovementType.name)। */
+data class ItemTypeSumRow(val itemId: String, val type: String, val qtyGrams: Double)
+
 /** লট × গুদাম অনুযায়ী ব্যালেন্স। */
 data class LotWarehouseBalanceRow(val lotId: String, val itemId: String, val warehouseId: String, val qtyGrams: Double)
 
@@ -133,6 +136,15 @@ data class CostRow(val qtyGrams: Double, val unitCostPaisaPerKg: Long)
 interface StockMovementDao {
     @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun insert(movement: StockMovementEntity)
+
+    @Query(
+        "SELECT itemId AS itemId, type AS type, SUM(qtyGrams) AS qtyGrams FROM stock_movements " +
+            "WHERE createdAt >= :from AND createdAt < :to GROUP BY itemId, type"
+    )
+    suspend fun periodByType(from: Long, to: Long): List<ItemTypeSumRow>
+
+    @Query("SELECT itemId AS itemId, SUM(qtyGrams) AS qtyGrams FROM stock_movements WHERE createdAt < :before GROUP BY itemId")
+    suspend fun balanceBefore(before: Long): List<ItemStockRow>
 
     @Query(
         "SELECT COALESCE(SUM(qtyGrams), 0.0) FROM stock_movements WHERE itemId = :itemId " +

@@ -168,6 +168,29 @@ class StockRepository @Inject constructor(
         return id
     }
 
+    /** ওপেনিং স্টক (দাম ছাড়া): নির্ধারিত তারিখে একটি লট + মুভমেন্ট; ফেরত: movementId। */
+    suspend fun addOpening(itemId: String, warehouseId: String, qtyGrams: Double, atMillis: Long, expiryAt: Long?): String {
+        session.require(Permission.INVENTORY)
+        val userId = session.userId
+        require(qtyGrams > StockCalc.EPS) { "পরিমাণ শূন্যের বেশি হতে হবে" }
+        val item = itemDao.getById(itemId)
+        require(item != null && item.deletedAt == null) { "আইটেম পাওয়া যায়নি" }
+        val wh = warehouseDao.getById(warehouseId)
+        require(wh != null && wh.deletedAt == null) { "গুদাম পাওয়া যায়নি" }
+        val stamp = java.text.SimpleDateFormat("yyyyMMdd", java.util.Locale.US).format(java.util.Date(atMillis))
+        val lotId = if (item.trackLot) createLot(itemId, "OPEN-$stamp", null, expiryAt, null, null, QcStatus.PASSED) else null
+        val id = newId()
+        movementDao.insert(
+            StockMovementEntity(
+                id = id, itemId = itemId, lotId = lotId, warehouseId = warehouseId, type = MovementType.ADJUSTMENT,
+                qtyGrams = qtyGrams, refType = "OPENING", refId = null, createdBy = userId,
+                createdAt = atMillis, deviceId = stamper.deviceId, unitCostPaisaPerKg = null, note = "ওপেনিং স্টক",
+            )
+        )
+        audit.log("STOCK_OPENING", "stock_movements", id, "item=$itemId qty=$qtyGrams")
+        return id
+    }
+
     /** স্টক অ্যাডজাস্টমেন্ট (গণনার পর মিল করা); [deltaGrams] ধনাত্মক = বাড়ানো, ঋণাত্মক = কমানো। কারণ বাধ্যতামূলক। */
     suspend fun adjust(itemId: String, lotId: String?, warehouseId: String, deltaGrams: Double, reason: String): String {
         session.require(Permission.INVENTORY)

@@ -12,6 +12,7 @@ import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+/** নিও (সফট-এমবস) ছায়া: নিচে-ডানে গাঢ়, ওপরে-বামে হালকা আভা — শুধু Compose DrawScope দিয়ে। */
 @Composable
 fun Modifier.neo(radius: Dp = 20.dp, depth: Dp = 6.dp): Modifier {
     val dark = MaterialTheme.colorScheme.background.luminance() < 0.5f

@@ -31,6 +31,7 @@ object SeedData {
 
     data class ItemDef(val code: String, val name: String, val type: ItemType)
 
+    /** ডিফল্ট ওষুধ/প্রিমিক্স/অ্যাডিটিভ তালিকা (কেজি ইউনিট)। পরে আইটেম স্ক্রিন থেকে বদলানো যাবে। */
     val items: List<ItemDef> = listOf(
         "Heat Stressor", "Prebiotics", "Choline Chloride", "Choline Chloride-60%", "MCP (Sinophos)",
         "Fulvat / Minerva", "Fermkito", "MG Bile", "Fish Vitamin Premix", "Fish Vitamin Premix (Renata)",
@@ -81,6 +82,7 @@ class Seeder @Inject constructor(
                 )
             }
         }
+        // একবার বসে; ইউজার মুছে ফেললে (softdelete) আর ফিরে আসে না।
         SeedData.items.forEach { d ->
             val id = SeedData.itemId(d.code)
             if (items.getById(id) == null && items.getByCode(d.code) == null) {
